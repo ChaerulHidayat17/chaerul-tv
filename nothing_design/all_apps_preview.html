@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'NDot57';
+    src: url('ndot.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'NType82';
+    src: url('ntype.otf') format('opentype');
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1280px;
+    height: 720px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'NType82', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 48px 20px 48px;
+    user-select: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-family: 'NDot57', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+  }
+
+  .sub {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 4px;
+  }
+
+  .clock {
+    font-family: 'NDot57', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+  }
+
+  /* FILTERS */
+  .filter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+  }
+
+  .filters {
+    display: flex;
+    gap: 8px;
+  }
+
+  .chip {
+    height: 30px;
+    padding: 0 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chip.active {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+  .chip.inactive {
+    background: #141414;
+    color: #888888;
+    border: 1px solid #222222;
+  }
+
+  .app-count-hint {
+    font-size: 11px;
+    color: #666666;
+  }
+
+  /* 3x6 GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    height: 440px;
+    margin-top: 16px;
+  }
+
+  .card {
+    background: #141414;
+    border: 1px solid #222222;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: all 0.2s;
+  }
+
+  .card svg {
+    width: 38px;
+    height: 38px;
+    fill: #CCCCCC;
+  }
+
+  .card .label {
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* Focused Card in All Apps: Inverted White Card */
+  .card.focused {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  }
+
+  .card.focused svg {
+    fill: #000000;
+  }
+
+  .card.focused .label {
+    color: #000000;
+    font-weight: 700;
+  }
+
+  /* FOOTER */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #141414;
+  }
+
+  .footer-hints {
+    font-size: 10px;
+    color: #555555;
+    letter-spacing: 1px;
+  }
+
+  .footer-code {
+    font-family: 'NDot57', sans-serif;
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: 1.5px;
+  }
+</style>
+</head>
+<body>
+
+  <div>
+    <div class="header">
+      <div>
+        <div class="title">ALL APPS</div>
+        <div class="sub">Everything you watch, listen to and open.</div>
+      </div>
+      <div class="clock">21:50</div>
+    </div>
+
+    <div class="filter-row">
+      <div class="filters">
+        <div class="chip active">All</div>
+        <div class="chip inactive">Video</div>
+        <div class="chip inactive">Music</div>
+        <div class="chip inactive">Utilities</div>
+      </div>
+      <div class="app-count-hint">18 apps &nbsp;/&nbsp; Hold OK for options</div>
+    </div>
+
+    <!-- 3x6 Grid of Apps -->
+    <div class="grid">
+      <!-- 1. Focused Card: Netflix -->
+      <div class="card focused">
+        <svg viewBox="0 0 24 24"><path d="M5.5 2v20l4.5-2.5V2H5.5zm8.5 0v17.5l4.5 2.5V2H14zm-4 4.5L14 17.5V13l-4-9v2.5z"/></svg>
+        <span class="label">Netflix</span>
+      </div>
+
+      <!-- 2. YouTube -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.82.42A2.5 2.5 0 0 0 2.42 7.2C2 8.76 2 12 2 12s0 3.24.42 4.81a2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77C22 15.24 22 12 22 12s0-3.24-.42-4.81zM10 15V9l5.2 3L10 15z"/></svg>
+        <span class="label">YouTube</span>
+      </div>
+
+      <!-- 3. Disney+ -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M11.5 3C7 3 3 7 3 12c0 4.5 3.5 8 8 8 2.5 0 4.5-1 6-2.5l-2-1.5c-1 1-2.5 1.5-4 1.5-3 0-5.5-2.5-5.5-5.5S8 6 11 6c1.5 0 3 .5 4 1.5L17 6C15.5 4.5 13.5 3 11.5 3zm6.5 6l-3.5 4.5 3.5 4.5h2.5L16.5 13.5 20.5 9H18z"/></svg>
+        <span class="label">Disney+</span>
+      </div>
+
+      <!-- 4. Prime Video -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M3 13.5C6.5 17 11.5 18 16 16.5l.5 1.5C11.5 19.5 6 18.5 2 14.5l1-1zm14-5.5c-1 0-2 .5-2.5 1.5-.5-1-1.5-1.5-2.5-1.5-2 0-3 1.5-3 3.5s1 3.5 3 3.5c1 0 2-.5 2.5-1.5.5 1 1.5 1.5 2.5 1.5 2 0 3-1.5 3-3.5S19 8 17 8z"/></svg>
+        <span class="label">Prime Video</span>
+      </div>
+
+      <!-- 5. Vidio -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg>
+        <span class="label">Vidio</span>
+      </div>
+
+      <!-- 6. Vision+ -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        <span class="label">Vision+</span>
+      </div>
+
+      <!-- 7. Spotify -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.58 14.42c-.18.3-.57.4-.87.22-2.39-1.46-5.4-1.79-8.95-.98-.34.08-.68-.14-.76-.48-.08-.34.14-.68.48-.76 3.9-.89 7.23-.51 9.88 1.12.3.19.4.58.22.88zm1.22-2.73c-.23.37-.71.49-1.08.26-2.74-1.68-6.91-2.17-10.15-1.18-.42.13-.86-.11-.99-.52-.13-.42.11-.86.52-.99 3.7-1.12 8.3-.58 11.44 1.35.37.23.49.71.26 1.08zm.13-2.84C14.65 9.07 9.24 8.89 6.1 9.84c-.5.15-1.03-.13-1.18-.63-.15-.5.13-1.03.63-1.18 3.65-1.11 9.61-.9 13.1 1.17.45.27.6.86.33 1.31-.27.45-.86.6-1.05.34z"/></svg>
+        <span class="label">Spotify</span>
+      </div>
+
+      <!-- 8. Apple Music -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        <span class="label">Apple Music</span>
+      </div>
+
+      <!-- 9. VLC -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M14.5 13.5l1.5-6h-8l1.5 6h5zm-6 2l-1.5 4h10l-1.5-4h-7zm3-12h1l.5 2h-2l.5-2z"/></svg>
+        <span class="label">VLC Player</span>
+      </div>
+
+      <!-- 10. Kodi -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2zm0 4.5l5.5 5.5L12 17.5 6.5 12 12 6.5z"/></svg>
+        <span class="label">Kodi TV</span>
+      </div>
+
+      <!-- 11. Apple TV -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+        <span class="label">Apple TV</span>
+      </div>
+
+      <!-- 12. YouTube Music -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="#000"/></svg>
+        <span class="label">YT Music</span>
+      </div>
+
+      <!-- 13. WeTV -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg>
+        <span class="label">WeTV</span>
+      </div>
+
+      <!-- 14. iQIYI -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+        <span class="label">iQIYI</span>
+      </div>
+
+      <!-- 15. Live TV -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+        <span class="label">Live TV</span>
+      </div>
+
+      <!-- 16. Google Play Store -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M4 3.5v17l14-8.5L4 3.5z"/></svg>
+        <span class="label">Play Store</span>
+      </div>
+
+      <!-- 17. Settings -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        <span class="label">Settings</span>
+      </div>
+
+      <!-- 18. File Explorer -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+        <span class="label">Files</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-hints">D-PAD Navigate &nbsp;&nbsp;|&nbsp;&nbsp; OK Open &nbsp;&nbsp;|&nbsp;&nbsp; BACK Home</div>
+    <div class="footer-code">02 / CHAERUL APPS</div>
+  </div>
+
+</body>
+</html>

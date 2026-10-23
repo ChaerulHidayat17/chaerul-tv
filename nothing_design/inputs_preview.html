@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'NDot57';
+    src: url('ndot.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'NType82';
+    src: url('ntype.otf') format('opentype');
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1280px;
+    height: 720px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'NType82', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 48px 20px 48px;
+    user-select: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-family: 'NDot57', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+  }
+
+  .sub {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 4px;
+  }
+
+  .clock {
+    font-family: 'NDot57', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+  }
+
+  /* 2x3 GRID OF SOURCES */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    height: 440px;
+    margin-top: 24px;
+  }
+
+  .card {
+    background: #141414;
+    border: 1px solid #222222;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-top svg {
+    width: 32px;
+    height: 32px;
+    fill: #CCCCCC;
+  }
+
+  .badge-red {
+    background: #D71920;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .badge-gray {
+    background: #222222;
+    color: #777777;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .source-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .source-desc {
+    font-size: 12px;
+    color: #777777;
+    margin-top: 3px;
+  }
+
+  /* Focused Input: HDMI 1 */
+  .card.focused {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+  }
+
+  .card.focused .card-top svg {
+    fill: #000000;
+  }
+
+  .card.focused .source-name {
+    color: #000000;
+  }
+
+  .card.focused .source-desc {
+    color: #444444;
+  }
+
+  .hint-row {
+    font-size: 11px;
+    color: #666666;
+    margin-top: 14px;
+  }
+
+  /* FOOTER */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #141414;
+  }
+
+  .footer-hints {
+    font-size: 10px;
+    color: #555555;
+    letter-spacing: 1px;
+  }
+
+  .footer-code {
+    font-family: 'NDot57', sans-serif;
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: 1.5px;
+  }
+</style>
+</head>
+<body>
+
+  <div>
+    <div class="header">
+      <div>
+        <div class="title">INPUTS</div>
+        <div class="sub">Switch sources without leaving the couch.</div>
+      </div>
+      <div class="clock">21:50</div>
+    </div>
+
+    <!-- 2x3 Grid of Sources -->
+    <div class="grid">
+      <!-- 1. Live TV -->
+      <div class="card">
+        <div class="card-top">
+          <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+          <div class="badge-gray">READY</div>
+        </div>
+        <div>
+          <div class="source-name">Live TV</div>
+          <div class="source-desc">Antenna / Digital</div>
+        </div>
+      </div>
+
+      <!-- 2. HDMI 1 (Focused & Connected) -->
+      <div class="card focused">
+        <div class="card-top">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+          <div class="badge-red">CONNECTED</div>
+        </div>
+        <div>
+          <div class="source-name">HDMI 1</div>
+          <div class="source-desc">Game console</div>
+        </div>
+      </div>
+
+      <!-- 3. HDMI 2 -->
+      <div class="card">
+        <div class="card-top">
+          <svg viewBox="0 0 24 24"><path d="M8 3h8v6H8z"/></svg>
+          <div class="badge-gray">UNAVAILABLE</div>
+        </div>
+        <div>
+          <div class="source-name">HDMI 2</div>
+          <div class="source-desc">No signal</div>
+        </div>
+      </div>
+
+      <!-- 4. HDMI 3 -->
+      <div class="card">
+        <div class="card-top">
+          <svg viewBox="0 0 24 24"><path d="M8 3h8v6H8z"/></svg>
+          <div class="badge-gray">UNAVAILABLE</div>
+        </div>
+        <div>
+          <div class="source-name">HDMI 3</div>
+          <div class="source-desc">No signal</div>
+        </div>
+      </div>
+
+      <!-- 5. USB Storage -->
+      <div class="card">
+        <div class="card-top">
+          <svg viewBox="0 0 24 24"><path d="M15 7v4h1v2h-3V5h2l-3-4-3 4h2v8H8v-2.07c.7-.37 1.2-1.08 1.2-1.93 0-1.21-.99-2.2-2.2-2.2-1.21 0-2.2.99-2.2 2.2 0 .85.5 1.56 1.2 1.93V13c0 1.11.89 2 2 2h3v3.05c-.71.37-1.2 1.1-1.2 1.95a2.2 2.2 0 0 0 4.4 0c0-.85-.49-1.58-1.2-1.95V15h3c1.11 0 2-.89 2-2v-2h1V7h-4z"/></svg>
+          <div class="badge-red">CONNECTED</div>
+        </div>
+        <div>
+          <div class="source-name">USB Drive</div>
+          <div class="source-desc">Media storage</div>
+        </div>
+      </div>
+
+      <!-- 6. Google Cast -->
+      <div class="card">
+        <div class="card-top">
+          <svg viewBox="0 0 24 24"><path d="M1 18v3h3c0-1.66-1.34-3-3-3zm0-4v2c2.76 0 5 2.24 5 5h2c0-3.87-3.13-7-7-7zm0-4v2c4.97 0 9 4.03 9 9h2c0-6.08-4.93-11-11-11zm20-7H3c-1.1 0-2 .9-2 2v3h2V5h18v14h-7v2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+          <div class="badge-gray">READY</div>
+        </div>
+        <div>
+          <div class="source-name">Cast</div>
+          <div class="source-desc">From your phone</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hint-row">Hold OK on an HDMI input to rename it or change its icon.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-hints">D-PAD Navigate &nbsp;&nbsp;|&nbsp;&nbsp; OK Switch &nbsp;&nbsp;|&nbsp;&nbsp; BACK Home</div>
+    <div class="footer-code">03 / CHAERUL INPUTS</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF2F2F7"
+    android:orientation="horizontal"
+    android:paddingStart="36dp"
+    android:paddingEnd="36dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp">
+
+    <!-- LEFT SIDEBAR: iPadOS Style -->
+    <LinearLayout
+        android:id="@+id/sidebar"
+        android:layout_width="340dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="20dp">
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/ios_search_bg"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔍"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Cari"
+                android:textColor="#FF8E8E93"
+                android:textSize="15sp"
+                android:fontFamily="@font/outfit" />
+        </LinearLayout>
+
+        <!-- User Profile Card (Apple ID Style) -->
+        <LinearLayout
+            android:id="@+id/profileCard"
+            style="@style/IosLightRow"
+            android:layout_height="68dp"
+            android:background="@drawable/ios_card_white"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginBottom="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/squircle_gray"
+                android:gravity="center"
+                android:text="CH"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/outfit_medium" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chaerul Hidayat"
+                    android:textColor="#FF1C1C1E"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/outfit_medium" />
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="chaerulhidayat70@gmail.com"
+                    android:textColor="#FF8E8E93"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/outfit"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Sidebar Navigation List (with Apple Squircles) -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Wi-Fi -->
+                <LinearLayout
+                    android:id="@+id/navNetwork"
+                    style="@style/IosLightRow"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/squircle_blue"
+                        android:gravity="center"
+                        android:text="📶"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Wi-Fi"
+                        android:textColor="@drawable/ios_text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/outfit_medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NetVerse"
+                        android:textColor="#FF8E8E93"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/outfit" />
+                </LinearLayout>
+
+                <!-- Umum (General) -->
+                <LinearLayout
+                    android:id="@+id/navGeneral"
+                    style="@style/IosLightRow"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/squircle_gray"
+                        android:gravity="center"
+                        android:text="⚙️"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Umum"
+                        android:textColor="@drawable/ios_text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/outfit_medium" />
+                </LinearLayout>
+
+                <!-- Tampilan Layar -->
+                <LinearLayout
+                    android:id="@+id/navDisplay"
+                    style="@style/IosLightRow"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/squircle_blue"
+                        android:gravity="center"
+                        android:text="📺"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Tampilan &amp; Layar"
+                        android:textColor="@drawable/ios_text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/outfit_medium" />
+                </LinearLayout>
+
+                <!-- Layar Utama & Dock -->
+                <LinearLayout
+                    android:id="@+id/navAppearance"
+                    style="@style/IosLightRow"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/squircle_purple"
+                        android:gravity="center"
+                        android:text="📱"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Layar Utama &amp; Dock"
+                        android:textColor="@drawable/ios_text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/outfit_medium" />
+                </LinearLayout>
+
+                <!-- Aplikasi -->
+                <LinearLayout
+                    android:id="@+id/navApps"
+                    style="@style/IosLightRow"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/squircle_green"
+                        android:gravity="center"
+                        android:text="📂"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Aplikasi"
+                        android:textColor="@drawable/ios_text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/outfit_medium" />
+                </LinearLayout>
+
+                <!-- Wallpaper -->
+                <LinearLayout
+                    android:id="@+id/navWallpaper"
+                    style="@style/IosLightRow"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/squircle_teal"
+                        android:gravity="center"
+                        android:text="🖼️"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Wallpaper"
+                        android:textColor="@drawable/ios_text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/outfit_medium" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Hairline Vertical Divider -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#FFE5E5EA" />
+
+    <!-- RIGHT DETAIL PANE: White Inset Grouped Cards -->
+    <ScrollView
+        android:id="@+id/detailScroll"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hero Header (General) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="18dp">
+
+                <TextView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/squircle_gray"
+                    android:gravity="center"
+                    android:text="⚙️"
+                    android:textSize="26sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Umum"
+                        android:textColor="#FF1C1C1E"
+                        android:textSize="28sp"
+                        android:fontFamily="@font/outfit_medium"
+                        android:letterSpacing="-0.02" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Kelola pengaturan TV, penyimpanan, jaringan, dan preferensi tampilan Anda."
+                        android:textColor="#FF6C6C70"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/outfit" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- GROUP 1: INFORMASI SISTEM -->
+            <TextView
+                style="@style/IosLightSectionTitle"
+                android:text="Mengenai &amp; Sistem" />
+
+            <LinearLayout
+                style="@style/IosLightCard">
+
+                <TextView
+                    android:id="@+id/infoModel"
+                    style="@style/IosLightRow"
+                    android:text="Model:  Xiaomi MiTV-AXFU0" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/infoAndroid"
+                    style="@style/IosLightRow"
+                    android:text="Versi Perangkat Lunak:  Android 14 (iPadOS Clean Edition)" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/infoStorage"
+                    style="@style/IosLightRow"
+                    android:text="Penyimpanan TV:  1,43 GB Tersedia dari 4,14 GB" />
+            </LinearLayout>
+
+            <!-- GROUP 2: LAYAR UTAMA & TAMPILAN -->
+            <TextView
+                style="@style/IosLightSectionTitle"
+                android:text="Layar Utama &amp; Tampilan" />
+
+            <LinearLayout
+                style="@style/IosLightCard">
+
+                <!-- Clean Layout Indicator instead of boxy buttons -->
+                <TextView
+                    android:id="@+id/gridSummary"
+                    style="@style/IosLightRow"
+                    android:text="Tata Letak:  2 Baris Bersih (4 Aplikasi per Baris)" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/wallpaperChoice"
+                    style="@style/IosLightRow"
+                    android:text="Wallpaper:  Bawaan Tema" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/animationsChoice"
+                    style="@style/IosLightRow" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/advancedChoice"
+                    style="@style/IosLightRow" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/followThemeChoice"
+                    style="@style/IosLightRow"
+                    android:text="@string/follow_theme" />
+            </LinearLayout>
+
+            <!-- GROUP 3: PINTASAN SISTEM TV -->
+            <TextView
+                style="@style/IosLightSectionTitle"
+                android:text="Pengaturan Sistem" />
+
+            <LinearLayout
+                style="@style/IosLightCard">
+
+                <TextView
+                    android:id="@+id/shortcutDisplay"
+                    style="@style/IosLightRow"
+                    android:text="📺   Tampilan &amp; Layar TV  ›" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/shortcutNetwork"
+                    style="@style/IosLightRow"
+                    android:text="📶   Jaringan &amp; Wi-Fi  ›" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/shortcutApps"
+                    style="@style/IosLightRow"
+                    android:text="📱   Manajemen Aplikasi  ›" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/defaultHomeChoice"
+                    style="@style/IosLightRow"
+                    android:text="@string/home_settings" />
+
+                <View android:layout_width="match_parent" android:layout_height="0.8dp" android:layout_marginStart="12dp" android:background="#FFE5E5EA" />
+
+                <TextView
+                    android:id="@+id/tvSettingsChoice"
+                    style="@style/IosLightRow"
+                    android:text="@string/tv_settings" />
+            </LinearLayout>
+
+            <!-- Hidden stubs for legacy ID compatibility so LauncherSettingsActivity does not crash -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone">
+                <TextView android:id="@+id/columns4" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/columns5" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/columns6" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/columns7" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/rows0" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/rows1" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/rows2" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/rows3" android:layout_width="0dp" android:layout_height="0dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

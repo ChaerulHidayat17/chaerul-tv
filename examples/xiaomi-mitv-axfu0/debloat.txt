@@ -1,0 +1,58 @@
+# Xiaomi MiTV-AXFU0 (codename arctictale), Android 14 (SDK 34), Google TV.
+# Built from the live package list on the TV, verified component by component.
+# Stock launcher: com.google.android.apps.tv.launcherx (Google TV; stays Home until the new
+# launcher is installed, then launcher/build-and-install.ps1 disables it).
+#
+# Apply:   TV_HOST=192.168.1.20 powershell -File tools\disable.ps1 examples\xiaomi-mitv-axfu0\debloat.txt
+# Undo:    TV_HOST=192.168.1.20 powershell -File tools\restore.ps1  examples\xiaomi-mitv-axfu0\debloat.txt
+#          (for Google TV the restore wants the stock launcher: add com.google.android.apps.tv.launcherx)
+# Everything is DISABLED, not uninstalled. Comment out any line you want to keep.
+#
+# Kept on this owner's request: Google Assistant (katniss), Chromecast built-in (mediashell),
+# firmware updates (mitv.upgrader, mitv.ABUpdateStatus, xiaomi.mitv.updateservice,
+# droidlogic.updater), and the streaming apps actually used: YouTube, Netflix, Vidio, Prime Video.
+#
+# Notes from this firmware:
+# - setupwraith (com.google.android.tungsten.setupwraith) OWNS the saved Wi-Fi network
+#   (dumpsys wifi: cname=com.google.android.tungsten.setupwraith). Never disable it here or the TV
+#   drops off Wi-Fi and ADB. Left out of the list on purpose.
+# - com.mitv.toolhouse holds READ/WRITE/ACCESS_ALL_EPG_DATA and INSTALL_LOCATION_PROVIDER: it is the
+#   live-TV guide provider, not bloat. Left enabled.
+# - com.mitv.overseaservice contains .overseaBluetoothRCService (the remote's Bluetooth pairing) and
+#   .netflixService. Left enabled.
+# - com.mitv.setup, mitv.service, com.mitv.livetv*, com.mitv.videoplayer, com.mitv.gallery,
+#   com.mitv.mediaexplorer, com.android.mitv.globalkeyoverlay: inputs, remote keys, media. Protected.
+# - com.xiaomi.mitv.scenemode is picture/sound scene selection. Left enabled.
+# - Xiaomi screen mirroring (com.xiaomi.mitv.smartshare, com.xiaomi.wfdsinkhelperservice,
+#   com.xiaomi.mi_connect_service) left enabled: the owner kept Chromecast and was not asked about
+#   Miracast. Disable them under "casting" if that is wanted later.
+# - com.xiaomi.floatingframe and com.google.android.webview.beta were already disabled before this
+#   list ran; the recovery record keeps them that way.
+
+# --- Telemetry, analytics and log upload ---
+com.miui.tv.analytics                     # Xiaomi analytics
+com.xiaomi.statistic                      # log upload receiver
+com.xiaomi.tvqs.overseas.y24              # tvqs.action.UPLOAD / DROPBOX_ENTRY_ADDED log uploader
+com.xiaomi.mitv.detection                 # DiagnosisActivity
+com.google.android.feedback               # Google TV feedback / bug upload
+com.xm.webcontent                         # Xiaomi web content / promo pages
+com.xiaomo.tv.milegal                     # static legal / privacy text screens (sic, "xiaomo")
+com.xiaomi.floatingframe                  # already disabled before cleanup
+
+# --- PatchWall, content rows, sponsored rows, cleaners ---
+com.mitv.tvhome.atv                       # PatchWall / Xiaomi home content
+com.mitv.tvhome.michannel                 # Mi Channel content row
+com.mitv.tvhome.mitvplus                  # Mi TV+ sponsored live channels
+com.mitv.tvhome.oemtab                    # OEM tab content row
+com.xiaomi.mitv.tvmanager                 # "TV Manager" cleaner
+android.autoinstalls.config.soc.amlogic   # Play auto-install of partner apps
+
+# --- Preloaded apps this owner does not use ---
+com.iqiyi.i18n.tv
+com.tencent.qqlivei18n
+in.startv.hotstar.dplus.tv
+id.visionplus.android.atv
+com.internet.tvbrowser
+com.google.android.youtube.tvmusic        # YouTube Music (YouTube itself stays)
+com.google.android.play.games
+com.xiaomi.mimusic2

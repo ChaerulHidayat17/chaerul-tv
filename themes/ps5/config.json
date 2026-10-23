@@ -1,0 +1,42 @@
+{
+  "dock_apps": [
+    "com.netflix.ninja",
+    "in.startv.hotstar.dplus.tv",
+    "com.google.android.youtube.tv",
+    "com.vidio.android.tv",
+    "com.amazon.amazonvideo.livingroom",
+    "com.megarohas.amtv",
+    "com.android.vending",
+    "com.mitv.livetv"
+  ],
+  "app_labels": [
+    "com.megarohas.amtv=Apple Music"
+  ],
+  "hidden_apps": [
+    "com.android.tv.settings",
+    "com.apple.atve.androidtv.appletv",
+    "com.google.android.play.games",
+    "com.google.android.youtube.tvmusic",
+    "com.internet.tvbrowser",
+    "com.iqiyi.i18n.tv",
+    "com.mitv.gallery",
+    "com.mitv.tvhome.atv",
+    "com.mitv.tvhome.mitvplus",
+    "com.tencent.qqlivei18n",
+    "com.xiaomi.mitv.smartshare",
+    "com.xiaomi.mitv.tvmanager",
+    "id.visionplus.android.atv",
+    "com.mediatek.wwtv.tvcenter"
+  ],
+  "columns": 4,
+  "dock_row": false,
+  "fill_dock": true,
+  "always_show_names": false,
+  "animations": true,
+  "advanced_effects": true,
+  "ambient_glow": true,
+  "wallpaper": true,
+  "wallpaper_dim": 10,
+  "wallpaper_true_color": true,
+  "wallpaper_rotation_minutes": 0
+}

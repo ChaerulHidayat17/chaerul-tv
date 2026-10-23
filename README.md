@@ -55,8 +55,10 @@ adb install -r -d CHAERUL_TV_v1.0.apk
 ### Option 3: TV Downloader App (Zero PC Needed)
 1. Open the **Downloader** app on your Android TV / Google TV.
 2. Enter the direct download URL or short code:  
-   👉 `https://github.com/ChaerulHidayat17/chaerul-tv/releases/download/v1.0.0/CHAERUL_TV_v1.0.apk`
-3. Click Install $ightarrow$ Press **HOME** on your remote $ightarrow$ Select **Always**!
+   👉 `https://da.gd/t0vc3G`
+3. Click Install $
+ightarrow$ Press **HOME** on your remote $
+ightarrow$ Select **Always**!
 
 ---
 

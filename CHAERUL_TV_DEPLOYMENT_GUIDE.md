@@ -19,6 +19,21 @@ Dokumentasi ini disusun sebagai standar operasional prosedur (SOP) untuk memasan
 
 ---
 
+
+## 🌐 LINK DOWNLOAD RESMI & METODE CEPAT
+
+Untuk menginstal di TV orang lain tanpa perlu membawa laptop, kamu bisa gunakan salah satu jalur online resmi ini:
+
+1. **Jalur GitHub Repository Resmi:**
+   👉 **https://github.com/ChaerulHidayat17/chaerul-tv**
+2. **Jalur Halaman Release (Download Langsung di Browser):**
+   👉 **https://github.com/ChaerulHidayat17/chaerul-tv/releases/tag/v1.0.0**
+3. **Jalur Direct Download Super Cepat (Bisa diketik di Remote TV):**
+   👉 **`https://da.gd/t0vc3G`**
+   *(Cukup buka aplikasi **Downloader** di Android TV target, ketik `da.gd/t0vc3G`, file APK 2.09 MB langsung terunduh dan terpasang otomatis!)*
+
+---
+
 ## 1. TENTANG CHAERUL (TV)
 
 **CHAERUL (TV)** adalah antarmuka kustom (launcher) TV berbasis Android yang mengadopsi estetika industrial modern Nothing OS:

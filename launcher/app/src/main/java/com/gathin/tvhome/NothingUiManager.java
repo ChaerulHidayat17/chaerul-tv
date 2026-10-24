@@ -2,9 +2,11 @@ package com.gathin.tvhome;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
@@ -79,6 +81,19 @@ public class NothingUiManager {
     private final List<AppEntry> allAppsList = new ArrayList<>();
     private final List<AppEntry> filteredAppsList = new ArrayList<>();
 
+    private int lastDayOfYear = -1;
+    private int lastMinuteOfDay = -1;
+    private boolean receiverRegistered = false;
+
+    private final BroadcastReceiver timeAndDateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            updateCalendarAndPrayers(true);
+            updateClocks();
+            updateWifiStatus();
+        }
+    };
+
     public static class AppEntry {
         public String packageName;
         public String activityName;
@@ -135,8 +150,36 @@ public class NothingUiManager {
         // Start Clock & Time updater
         startRealtimeUpdater();
 
+        // Register date & time broadcast receiver
+        try {
+            IntentFilter filter = new IntentFilter();
+            filter.addAction(Intent.ACTION_TIME_TICK);
+            filter.addAction(Intent.ACTION_TIME_CHANGED);
+            filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
+            filter.addAction(Intent.ACTION_DATE_CHANGED);
+            filter.addAction(Intent.ACTION_SCREEN_ON);
+            activity.registerReceiver(timeAndDateReceiver, filter);
+            receiverRegistered = true;
+        } catch (Exception ignored) {}
+
         // Default: Show Home
         showScreen(R.id.screenHome);
+    }
+
+    public void onResume() {
+        updateCalendarAndPrayers(true);
+        updateClocks();
+        updateWifiStatus();
+    }
+
+    public void onDestroy() {
+        if (receiverRegistered) {
+            try {
+                activity.unregisterReceiver(timeAndDateReceiver);
+            } catch (Exception ignored) {}
+            receiverRegistered = false;
+        }
+        handler.removeCallbacksAndMessages(null);
     }
 
     public boolean handleBackPressed() {
@@ -157,6 +200,8 @@ public class NothingUiManager {
         updateClocks();
 
         if (screenId == R.id.screenHome) {
+            updateCalendarAndPrayers(true);
+            updateWifiStatus();
             if (dockContainer.getChildCount() > 0) {
                 dockContainer.getChildAt(0).requestFocus();
             }
@@ -295,14 +340,28 @@ public class NothingUiManager {
             });
         }
 
-        updateCalendarAndPrayers();
+        updateCalendarAndPrayers(true);
         updateWifiStatus();
     }
 
-    private void updateCalendarAndPrayers() {
-        Calendar cal = Calendar.getInstance();
-        Locale idLoc = new Locale("in", "ID");
+    public void updateCalendarAndPrayers() {
+        updateCalendarAndPrayers(false);
+    }
 
+    public void updateCalendarAndPrayers(boolean force) {
+        Calendar cal = Calendar.getInstance();
+        int curDay = cal.get(Calendar.DAY_OF_YEAR);
+        int curMinute = cal.get(Calendar.MINUTE);
+        int curHour = cal.get(Calendar.HOUR_OF_DAY);
+        int curMinuteOfDay = curHour * 60 + curMinute;
+
+        if (!force && curDay == lastDayOfYear && curMinuteOfDay == lastMinuteOfDay) {
+            return;
+        }
+        lastDayOfYear = curDay;
+        lastMinuteOfDay = curMinuteOfDay;
+
+        Locale idLoc = new Locale("in", "ID");
         SimpleDateFormat dayFmt = new SimpleDateFormat("EEEE", idLoc);
         SimpleDateFormat monthFmt = new SimpleDateFormat("MMM / yyyy", idLoc);
 
@@ -810,7 +869,8 @@ public class NothingUiManager {
             @Override
             public void run() {
                 updateClocks();
-                handler.postDelayed(this, 10000L); // Update every 10 seconds
+                updateCalendarAndPrayers(false);
+                handler.postDelayed(this, 1000L); // Real-time 1-second update
             }
         });
     }

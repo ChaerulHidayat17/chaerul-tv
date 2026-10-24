@@ -808,19 +808,64 @@ public class NothingUiManager {
         View toggleTimer = layout.findViewById(R.id.toggleTimer);
         View togglePower = layout.findViewById(R.id.togglePower);
 
-        if (toggleWifi != null) toggleWifi.setOnClickListener(v -> activity.startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)));
-        if (toggleBt != null) toggleBt.setOnClickListener(v -> activity.startActivity(new Intent(Settings.ACTION_BLUETOOTH_SETTINGS)));
+        if (toggleWifi != null) toggleWifi.setOnClickListener(v -> {
+            try {
+                activity.startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            } catch (Exception e) {
+                try { activity.startActivity(new Intent(Settings.ACTION_SETTINGS)); } catch (Exception ignored) {}
+            }
+        });
+
+        if (toggleBt != null) toggleBt.setOnClickListener(v -> {
+            try {
+                Intent i = new Intent("com.google.android.intent.action.CONNECT_INPUT");
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                activity.startActivity(i);
+                return;
+            } catch (Exception ignored) {}
+            try {
+                Intent i = new Intent();
+                i.setComponent(new ComponentName("com.android.tv.settings", "com.android.tv.settings.accessories.AddAccessoryActivity"));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                activity.startActivity(i);
+                return;
+            } catch (Exception ignored) {}
+            try {
+                Intent i = new Intent(Settings.ACTION_SETTINGS);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                activity.startActivity(i);
+            } catch (Exception e) {
+                Toast.makeText(activity, "Bluetooth", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         if (toggleInput != null) toggleInput.setOnClickListener(v -> showScreen(R.id.screenInputs));
         if (toggleCast != null) toggleCast.setOnClickListener(v -> {
             try { activity.startActivity(new Intent("android.settings.CAST_SETTINGS")); } catch (Exception ignored) {}
         });
-        if (togglePic != null) togglePic.setOnClickListener(v -> activity.startActivity(new Intent(Settings.ACTION_DISPLAY_SETTINGS)));
-        if (toggleSound != null) toggleSound.setOnClickListener(v -> activity.startActivity(new Intent(Settings.ACTION_SOUND_SETTINGS)));
+        if (togglePic != null) togglePic.setOnClickListener(v -> {
+            try {
+                activity.startActivity(new Intent(Settings.ACTION_DISPLAY_SETTINGS));
+            } catch (Exception e) {
+                try { activity.startActivity(new Intent(Settings.ACTION_SETTINGS)); } catch (Exception ignored) {}
+            }
+        });
+        if (toggleSound != null) toggleSound.setOnClickListener(v -> {
+            try {
+                activity.startActivity(new Intent(Settings.ACTION_SOUND_SETTINGS));
+            } catch (Exception e) {
+                try { activity.startActivity(new Intent(Settings.ACTION_SETTINGS)); } catch (Exception ignored) {}
+            }
+        });
         if (togglePower != null) togglePower.setOnClickListener(v -> Toast.makeText(activity, "Power Standby", Toast.LENGTH_SHORT).show());
 
         View btnAllSettings = layout.findViewById(R.id.btnAllSettings);
         if (btnAllSettings != null) {
-            btnAllSettings.setOnClickListener(v -> activity.startActivity(new Intent(Settings.ACTION_SETTINGS)));
+            btnAllSettings.setOnClickListener(v -> {
+                try {
+                    activity.startActivity(new Intent(Settings.ACTION_SETTINGS));
+                } catch (Exception ignored) {}
+            });
         }
 
         View volumeBar = layout.findViewById(R.id.volumeBarContainer);

@@ -1185,9 +1185,9 @@
                 android:padding="10dp"
                 android:focusable="true"
                 android:clickable="true">
-                <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_settings" android:tint="#FFFFFF" />
+                <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_bluetooth" android:tint="#FFFFFF" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Bluetooth" android:textColor="#FFFFFF" android:textSize="12sp" android:textStyle="bold" android:fontFamily="@font/ntype" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="On" android:textColor="#88FFFFFF" android:textSize="10sp" android:fontFamily="@font/ntype" />
+                <TextView android:id="@+id/valBt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pair &amp; Manage" android:textColor="#88FFFFFF" android:textSize="10sp" android:fontFamily="@font/ntype" />
             </LinearLayout>
 
             <!-- 3. Input -->

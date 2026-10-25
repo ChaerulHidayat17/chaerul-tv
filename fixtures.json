@@ -1,0 +1,34 @@
+{
+  "updated_at": "2026-10-25T12:00:00Z",
+  "season": "2026/2027",
+  "match1": {
+    "league": "SUPER LEAGUE • PEKAN 7",
+    "badge": "LAGA TERDEKAT • HARI INI",
+    "badge_color": "#D71920",
+    "time": "19:00 WIB",
+    "date": "Minggu, 25 Oktober 2026",
+    "venue": "Stadion Pakansari • Live Indosiar / Vidio",
+    "home_name": "GARUDAYAKSA",
+    "home_tag": "Home",
+    "home_logo": "logo_garudayaksa",
+    "away_name": "PERSIB",
+    "away_tag": "Away",
+    "away_logo": "logo_persib",
+    "app_package": "com.vidio.android.tv"
+  },
+  "match2": {
+    "league": "ACL TWO • MATCHDAY 3",
+    "badge": "COMING NEXT • ASIA",
+    "badge_color": "#0D47A1",
+    "time": "19:15 WIB",
+    "date": "Rabu, 28 Oktober 2026",
+    "venue": "Si Jalak Harupat • Live RCTI / Vision+",
+    "home_name": "PERSIB",
+    "home_tag": "Home",
+    "home_logo": "logo_persib",
+    "away_name": "M. VICTORY",
+    "away_tag": "Away",
+    "away_logo": "logo_melbourne_victory",
+    "app_package": "com.mitv.livetv"
+  }
+}

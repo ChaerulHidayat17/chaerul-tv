@@ -645,6 +645,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/textMatch1League"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SUPER LEAGUE • PEKAN 7"
@@ -654,6 +655,7 @@
                         android:fontFamily="@font/ntype" />
 
                     <TextView
+                        android:id="@+id/textMatch1Badge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -686,6 +688,7 @@
                         android:gravity="center_vertical">
 
                         <ImageView
+                            android:id="@+id/imgMatch1Home"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:src="@drawable/logo_garudayaksa"
@@ -698,6 +701,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/textMatch1HomeName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="GARUDAYAKSA"
@@ -707,6 +711,7 @@
                                 android:fontFamily="@font/ntype" />
 
                             <TextView
+                                android:id="@+id/textMatch1HomeTag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Home"
@@ -726,6 +731,7 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/textMatch1Time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="19:00 WIB"
@@ -761,6 +767,7 @@
                             android:gravity="end">
 
                             <TextView
+                                android:id="@+id/textMatch1AwayName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="PERSIB"
@@ -770,6 +777,7 @@
                                 android:fontFamily="@font/ntype" />
 
                             <TextView
+                                android:id="@+id/textMatch1AwayTag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Away"
@@ -779,6 +787,7 @@
                         </LinearLayout>
 
                         <ImageView
+                            android:id="@+id/imgMatch1Away"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:src="@drawable/logo_persib"
@@ -793,6 +802,7 @@
                     android:paddingTop="4dp">
 
                     <TextView
+                        android:id="@+id/textMatch1Date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
@@ -804,6 +814,7 @@
                         android:fontFamily="@font/ntype" />
 
                     <TextView
+                        android:id="@+id/textMatch1Venue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -837,6 +848,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/textMatch2League"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ACL TWO • MATCHDAY 3"
@@ -846,6 +858,7 @@
                         android:fontFamily="@font/ntype" />
 
                     <TextView
+                        android:id="@+id/textMatch2Badge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -878,6 +891,7 @@
                         android:gravity="center_vertical">
 
                         <ImageView
+                            android:id="@+id/imgMatch2Home"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:src="@drawable/logo_persib"
@@ -890,6 +904,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/textMatch2HomeName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="PERSIB"
@@ -899,6 +914,7 @@
                                 android:fontFamily="@font/ntype" />
 
                             <TextView
+                                android:id="@+id/textMatch2HomeTag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Home"
@@ -918,6 +934,7 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/textMatch2Time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="19:15 WIB"
@@ -953,6 +970,7 @@
                             android:gravity="end">
 
                             <TextView
+                                android:id="@+id/textMatch2AwayName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="M. VICTORY"
@@ -962,6 +980,7 @@
                                 android:fontFamily="@font/ntype" />
 
                             <TextView
+                                android:id="@+id/textMatch2AwayTag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Away"
@@ -971,6 +990,7 @@
                         </LinearLayout>
 
                         <ImageView
+                            android:id="@+id/imgMatch2Away"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:src="@drawable/logo_melbourne_victory"
@@ -985,6 +1005,7 @@
                     android:paddingTop="4dp">
 
                     <TextView
+                        android:id="@+id/textMatch2Date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
@@ -996,6 +1017,7 @@
                         android:fontFamily="@font/ntype" />
 
                     <TextView
+                        android:id="@+id/textMatch2Venue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

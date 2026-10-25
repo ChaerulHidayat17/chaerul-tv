@@ -35,6 +35,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -45,6 +49,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import org.json.JSONObject;
 
 /**
  * Controller for the complete NOTHING (TV) 4-screen design experience:
@@ -711,6 +716,166 @@ public class NothingUiManager {
                             .start();
                 });
             }
+        }
+
+        // 1. Load cached fixtures if available (instant offline-first)
+        String cachedJson = activity.getSharedPreferences("chaerul_tv_prefs", Context.MODE_PRIVATE)
+                .getString("cached_persib_fixtures", null);
+        if (cachedJson != null) {
+            try {
+                applyPersibFixtures(new JSONObject(cachedJson), layout);
+            } catch (Exception ignored) {}
+        }
+
+        // 2. Fetch latest fixtures from GitHub in background
+        syncPersibFixturesAsync(layout);
+    }
+
+    private void syncPersibFixturesAsync(View layout) {
+        new Thread(() -> {
+            try {
+                URL url = new URL("https://raw.githubusercontent.com/ChaerulHidayat17/chaerul-tv/main/fixtures.json");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setConnectTimeout(6000);
+                conn.setReadTimeout(6000);
+                conn.setRequestProperty("User-Agent", "ChaerulTV-Launcher");
+                conn.setRequestProperty("Cache-Control", "no-cache");
+                if (conn.getResponseCode() == 200) {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        sb.append(line);
+                    }
+                    reader.close();
+                    String jsonStr = sb.toString();
+
+                    activity.getSharedPreferences("chaerul_tv_prefs", Context.MODE_PRIVATE)
+                            .edit()
+                            .putString("cached_persib_fixtures", jsonStr)
+                            .apply();
+
+                    activity.runOnUiThread(() -> {
+                        try {
+                            applyPersibFixtures(new JSONObject(jsonStr), layout);
+                        } catch (Exception ignored) {}
+                    });
+                }
+            } catch (Exception ignored) {
+                // Offline or timeout: default layout or cached data remains displayed
+            }
+        }).start();
+    }
+
+    private void applyPersibFixtures(JSONObject json, View layout) {
+        if (json == null || layout == null) return;
+        try {
+            // Match 1
+            JSONObject m1 = json.optJSONObject("match1");
+            if (m1 != null) {
+                TextView tLeague = layout.findViewById(R.id.textMatch1League);
+                TextView tBadge = layout.findViewById(R.id.textMatch1Badge);
+                ImageView imgHome = layout.findViewById(R.id.imgMatch1Home);
+                TextView tHome = layout.findViewById(R.id.textMatch1HomeName);
+                TextView tHomeTag = layout.findViewById(R.id.textMatch1HomeTag);
+                TextView tTime = layout.findViewById(R.id.textMatch1Time);
+                ImageView imgAway = layout.findViewById(R.id.imgMatch1Away);
+                TextView tAway = layout.findViewById(R.id.textMatch1AwayName);
+                TextView tAwayTag = layout.findViewById(R.id.textMatch1AwayTag);
+                TextView tDate = layout.findViewById(R.id.textMatch1Date);
+                TextView tVenue = layout.findViewById(R.id.textMatch1Venue);
+
+                if (tLeague != null) tLeague.setText(m1.optString("league", "SUPER LEAGUE • PEKAN 7"));
+                if (tBadge != null) tBadge.setText(m1.optString("badge", "LAGA TERDEKAT • HARI INI"));
+                if (imgHome != null) imgHome.setImageResource(getDrawableResByName(m1.optString("home_logo", "logo_garudayaksa")));
+                if (tHome != null) tHome.setText(m1.optString("home_name", "GARUDAYAKSA"));
+                if (tHomeTag != null) tHomeTag.setText(m1.optString("home_tag", "Home"));
+                if (tTime != null) tTime.setText(m1.optString("time", "19:00 WIB"));
+                if (imgAway != null) imgAway.setImageResource(getDrawableResByName(m1.optString("away_logo", "logo_persib")));
+                if (tAway != null) tAway.setText(m1.optString("away_name", "PERSIB"));
+                if (tAwayTag != null) tAwayTag.setText(m1.optString("away_tag", "Away"));
+                if (tDate != null) tDate.setText(m1.optString("date", "Minggu, 25 Oktober 2026"));
+                if (tVenue != null) tVenue.setText(m1.optString("venue", "Stadion Pakansari • Live Indosiar / Vidio"));
+
+                final String pkg1 = m1.optString("app_package", "com.vidio.android.tv");
+                View card1 = layout.findViewById(R.id.cardMatch1);
+                if (card1 != null) {
+                    card1.setOnClickListener(v -> {
+                        if (!launchApp(pkg1)) {
+                            launchApp("com.mitv.livetv");
+                        }
+                    });
+                }
+            }
+
+            // Match 2
+            JSONObject m2 = json.optJSONObject("match2");
+            if (m2 != null) {
+                TextView tLeague = layout.findViewById(R.id.textMatch2League);
+                TextView tBadge = layout.findViewById(R.id.textMatch2Badge);
+                ImageView imgHome = layout.findViewById(R.id.imgMatch2Home);
+                TextView tHome = layout.findViewById(R.id.textMatch2HomeName);
+                TextView tHomeTag = layout.findViewById(R.id.textMatch2HomeTag);
+                TextView tTime = layout.findViewById(R.id.textMatch2Time);
+                ImageView imgAway = layout.findViewById(R.id.imgMatch2Away);
+                TextView tAway = layout.findViewById(R.id.textMatch2AwayName);
+                TextView tAwayTag = layout.findViewById(R.id.textMatch2AwayTag);
+                TextView tDate = layout.findViewById(R.id.textMatch2Date);
+                TextView tVenue = layout.findViewById(R.id.textMatch2Venue);
+
+                if (tLeague != null) tLeague.setText(m2.optString("league", "ACL TWO • MATCHDAY 3"));
+                if (tBadge != null) tBadge.setText(m2.optString("badge", "COMING NEXT • ASIA"));
+                if (imgHome != null) imgHome.setImageResource(getDrawableResByName(m2.optString("home_logo", "logo_persib")));
+                if (tHome != null) tHome.setText(m2.optString("home_name", "PERSIB"));
+                if (tHomeTag != null) tHomeTag.setText(m2.optString("home_tag", "Home"));
+                if (tTime != null) tTime.setText(m2.optString("time", "19:15 WIB"));
+                if (imgAway != null) imgAway.setImageResource(getDrawableResByName(m2.optString("away_logo", "logo_melbourne_victory")));
+                if (tAway != null) tAway.setText(m2.optString("away_name", "M. VICTORY"));
+                if (tAwayTag != null) tAwayTag.setText(m2.optString("away_tag", "Away"));
+                if (tDate != null) tDate.setText(m2.optString("date", "Rabu, 28 Oktober 2026"));
+                if (tVenue != null) tVenue.setText(m2.optString("venue", "Si Jalak Harupat • Live RCTI / Vision+"));
+
+                final String pkg2 = m2.optString("app_package", "com.mitv.livetv");
+                View card2 = layout.findViewById(R.id.cardMatch2);
+                if (card2 != null) {
+                    card2.setOnClickListener(v -> {
+                        if (!launchApp(pkg2)) {
+                            launchApp("com.visionplus.android");
+                        }
+                    });
+                }
+            }
+        } catch (Exception ignored) {}
+    }
+
+    private int getDrawableResByName(String logoName) {
+        if (logoName == null) return R.drawable.logo_persib;
+        switch (logoName.toLowerCase()) {
+            case "logo_garudayaksa":
+            case "garudayaksa":
+                return R.drawable.logo_garudayaksa;
+            case "logo_melbourne_victory":
+            case "melbourne_victory":
+            case "m_victory":
+                return R.drawable.logo_melbourne_victory;
+            case "logo_kalteng":
+            case "kalteng":
+            case "isenmulang":
+                return R.drawable.logo_kalteng;
+            case "logo_persik":
+            case "persik":
+                return R.drawable.logo_persik;
+            case "logo_persebaya":
+            case "persebaya":
+                return R.drawable.logo_persebaya;
+            case "logo_semen_padang":
+            case "semen_padang":
+                return R.drawable.logo_semen_padang;
+            case "logo_persib":
+            case "persib":
+            default:
+                int id = activity.getResources().getIdentifier(logoName, "drawable", activity.getPackageName());
+                return id != 0 ? id : R.drawable.logo_persib;
         }
     }
 

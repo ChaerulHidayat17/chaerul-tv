@@ -563,7 +563,7 @@
         </HorizontalScrollView>
 
         <!-- ======================================================== -->
-        <!-- SECTION 3: PERSIB BANDUNG FIXTURES                       -->
+        <!-- SECTION 3: JADWAL PERSIB BANDUNG (GOOGLE SPORTS STYLE)   -->
         <!-- ======================================================== -->
         <RelativeLayout
             android:layout_width="match_parent"
@@ -581,22 +581,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PERSIB MATCHDAY"
+                    android:text="JADWAL PERSIB BANDUNG"
                     android:textColor="#FFFFFF"
                     android:textSize="13sp"
-                    android:fontFamily="@font/ndot"
-                    android:letterSpacing="0.08" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/ntype"
+                    android:letterSpacing="0.04" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/nothing_badge_red"
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
+                    android:paddingStart="7dp"
+                    android:paddingEnd="7dp"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
-                    android:text="NEXT MATCH"
+                    android:text="LIGA 1 2024/2025"
                     android:textColor="#FFFFFF"
                     android:textSize="9sp"
                     android:fontFamily="@font/ntype"
@@ -608,21 +609,21 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:text="Jadwal Resmi Pangeran Biru • ACL Two &amp; BRI Liga 1"
-                android:textColor="#66FFFFFF"
-                android:textSize="10sp"
+                android:text="Sumber: Google Sports • Tanggal, Jam &amp; Tahun Lengkap"
+                android:textColor="#88FFFFFF"
+                android:textSize="10.5sp"
                 android:fontFamily="@font/ntype" />
         </RelativeLayout>
 
         <!-- 3 Match Cards Grid -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="144dp"
             android:layout_marginTop="6dp"
             android:orientation="horizontal"
             android:weightSum="3">
 
-            <!-- Card 1: NEXT MATCH (Terdekat) - ACL TWO -->
+            <!-- Card 1: NEXT MATCH (Terdekat) - Persib vs Persik -->
             <LinearLayout
                 android:id="@+id/cardMatch1"
                 android:layout_width="0dp"
@@ -631,10 +632,10 @@
                 android:layout_marginEnd="6dp"
                 android:background="@drawable/nothing_card_bg"
                 android:orientation="vertical"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:focusable="true"
                 android:clickable="true">
 
@@ -646,9 +647,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ACL TWO • MATCHDAY 3"
-                        android:textColor="#5D9CEC"
-                        android:textSize="9sp"
+                        android:text="BRI LIGA 1 • PEKAN 25"
+                        android:textColor="#00A3FF"
+                        android:textSize="9.5sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/ntype" />
 
@@ -661,10 +662,11 @@
                         android:paddingEnd="6dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:text="KAMIS, 24 OKT"
+                        android:text="LAGA TERDEKAT"
                         android:textColor="#FFFFFF"
                         android:textSize="9sp"
-                        android:fontFamily="@font/ndot" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/ntype" />
                 </RelativeLayout>
 
                 <!-- Center: Matchup Row -->
@@ -685,17 +687,18 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/ic_persib_logo" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_persib"
+                            android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="3dp"
                             android:text="PERSIB"
                             android:textColor="#FFFFFF"
-                            android:textSize="11sp"
+                            android:textSize="11.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
@@ -712,20 +715,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="VS"
-                            android:textColor="#66FFFFFF"
+                            android:textColor="#88FFFFFF"
                             android:textSize="11sp"
-                            android:fontFamily="@font/ndot" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="19:15"
+                            android:text="20:30 WIB"
                             android:textColor="#FFFFFF"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/ndot" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
                     </LinearLayout>
 
-                    <!-- Away: Lion City Sailors -->
+                    <!-- Away: Persik Kediri -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -734,23 +739,24 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/ic_lion_city_logo" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_persik"
+                            android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="LION CITY"
+                            android:layout_marginTop="3dp"
+                            android:text="PERSIK"
                             android:textColor="#FFFFFF"
-                            android:textSize="11sp"
+                            android:textSize="11.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Bottom: Stadium & Broadcast -->
+                <!-- Bottom: Full Date + Year & Stadium -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -761,9 +767,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Si Jalak Harupat"
-                        android:textColor="#88FFFFFF"
-                        android:textSize="9.5sp"
+                        android:text="Rabu, 05 Maret 2025"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
                         android:fontFamily="@font/ntype" />
 
                     <TextView
@@ -771,19 +778,14 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/nothing_pill_dark"
-                        android:paddingStart="7dp"
-                        android:paddingEnd="7dp"
-                        android:paddingTop="2dp"
-                        android:paddingBottom="2dp"
-                        android:text="RCTI • Vision+"
-                        android:textColor="#CCCCCC"
-                        android:textSize="9sp"
+                        android:text="GBLA • Indosiar / Vidio"
+                        android:textColor="#A0A0A0"
+                        android:textSize="9.5sp"
                         android:fontFamily="@font/ntype" />
                 </RelativeLayout>
             </LinearLayout>
 
-            <!-- Card 2: UPCOMING - BRI LIGA 1 (Persik vs Persib) -->
+            <!-- Card 2: Semen Padang vs Persib -->
             <LinearLayout
                 android:id="@+id/cardMatch2"
                 android:layout_width="0dp"
@@ -793,10 +795,10 @@
                 android:layout_marginEnd="3dp"
                 android:background="@drawable/nothing_card_bg"
                 android:orientation="vertical"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:focusable="true"
                 android:clickable="true">
 
@@ -808,9 +810,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BRI LIGA 1 • PEKAN 9"
-                        android:textColor="#48CFAD"
-                        android:textSize="9sp"
+                        android:text="BRI LIGA 1 • PEKAN 26"
+                        android:textColor="#00A3FF"
+                        android:textSize="9.5sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/ntype" />
 
@@ -823,10 +825,11 @@
                         android:paddingEnd="6dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:text="SENIN, 28 OKT"
+                        android:text="UPCOMING"
                         android:textColor="#FFFFFF"
                         android:textSize="9sp"
-                        android:fontFamily="@font/ndot" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/ntype" />
                 </RelativeLayout>
 
                 <!-- Center: Matchup Row -->
@@ -838,7 +841,7 @@
                     android:gravity="center_vertical"
                     android:weightSum="3">
 
-                    <!-- Home: Persik Kediri -->
+                    <!-- Home: Semen Padang -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -847,17 +850,18 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/ic_persik_logo" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_semen_padang"
+                            android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="PERSIK"
+                            android:layout_marginTop="3dp"
+                            android:text="S. PADANG"
                             android:textColor="#FFFFFF"
-                            android:textSize="11sp"
+                            android:textSize="11.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
@@ -874,17 +878,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="VS"
-                            android:textColor="#66FFFFFF"
+                            android:textColor="#88FFFFFF"
                             android:textSize="11sp"
-                            android:fontFamily="@font/ndot" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="19:00"
+                            android:text="20:30 WIB"
                             android:textColor="#FFFFFF"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/ndot" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
                     </LinearLayout>
 
                     <!-- Away: PERSIB -->
@@ -896,23 +902,24 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/ic_persib_logo" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_persib"
+                            android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="3dp"
                             android:text="PERSIB"
                             android:textColor="#FFFFFF"
-                            android:textSize="11sp"
+                            android:textSize="11.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Bottom: Stadium & Broadcast -->
+                <!-- Bottom: Full Date + Year & Stadium -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -923,9 +930,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Stadion Brawijaya"
-                        android:textColor="#88FFFFFF"
-                        android:textSize="9.5sp"
+                        android:text="Senin, 10 Maret 2025"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
                         android:fontFamily="@font/ntype" />
 
                     <TextView
@@ -933,19 +941,14 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/nothing_pill_dark"
-                        android:paddingStart="7dp"
-                        android:paddingEnd="7dp"
-                        android:paddingTop="2dp"
-                        android:paddingBottom="2dp"
-                        android:text="Indosiar • Vidio"
-                        android:textColor="#CCCCCC"
-                        android:textSize="9sp"
+                        android:text="H. Agus Salim • Indosiar"
+                        android:textColor="#A0A0A0"
+                        android:textSize="9.5sp"
                         android:fontFamily="@font/ntype" />
                 </RelativeLayout>
             </LinearLayout>
 
-            <!-- Card 3: UPCOMING - BRI LIGA 1 (Persib vs Semen Padang) -->
+            <!-- Card 3: Persebaya vs Persib -->
             <LinearLayout
                 android:id="@+id/cardMatch3"
                 android:layout_width="0dp"
@@ -954,10 +957,10 @@
                 android:layout_marginStart="6dp"
                 android:background="@drawable/nothing_card_bg"
                 android:orientation="vertical"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:focusable="true"
                 android:clickable="true">
 
@@ -969,9 +972,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BRI LIGA 1 • PEKAN 10"
-                        android:textColor="#48CFAD"
-                        android:textSize="9sp"
+                        android:text="BRI LIGA 1 • PEKAN 24"
+                        android:textColor="#00A3FF"
+                        android:textSize="9.5sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/ntype" />
 
@@ -984,10 +987,11 @@
                         android:paddingEnd="6dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:text="JUMAT, 01 NOV"
+                        android:text="BIG MATCH"
                         android:textColor="#FFFFFF"
                         android:textSize="9sp"
-                        android:fontFamily="@font/ndot" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/ntype" />
                 </RelativeLayout>
 
                 <!-- Center: Matchup Row -->
@@ -999,7 +1003,7 @@
                     android:gravity="center_vertical"
                     android:weightSum="3">
 
-                    <!-- Home: PERSIB -->
+                    <!-- Home: Persebaya -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -1008,17 +1012,18 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/ic_persib_logo" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_persebaya"
+                            android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="PERSIB"
+                            android:layout_marginTop="3dp"
+                            android:text="PERSEBAYA"
                             android:textColor="#FFFFFF"
-                            android:textSize="11sp"
+                            android:textSize="11.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
@@ -1035,20 +1040,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="VS"
-                            android:textColor="#66FFFFFF"
+                            android:textColor="#88FFFFFF"
                             android:textSize="11sp"
-                            android:fontFamily="@font/ndot" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="19:00"
+                            android:text="20:30 WIB"
                             android:textColor="#FFFFFF"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/ndot" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
                     </LinearLayout>
 
-                    <!-- Away: Semen Padang -->
+                    <!-- Away: PERSIB -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -1057,23 +1064,24 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/ic_semen_padang_logo" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_persib"
+                            android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="S. PADANG"
+                            android:layout_marginTop="3dp"
+                            android:text="PERSIB"
                             android:textColor="#FFFFFF"
-                            android:textSize="11sp"
+                            android:textSize="11.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Bottom: Stadium & Broadcast -->
+                <!-- Bottom: Full Date + Year & Stadium -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1084,9 +1092,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Si Jalak Harupat"
-                        android:textColor="#88FFFFFF"
-                        android:textSize="9.5sp"
+                        android:text="Sabtu, 01 Maret 2025"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
                         android:fontFamily="@font/ntype" />
 
                     <TextView
@@ -1094,14 +1103,9 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/nothing_pill_dark"
-                        android:paddingStart="7dp"
-                        android:paddingEnd="7dp"
-                        android:paddingTop="2dp"
-                        android:paddingBottom="2dp"
-                        android:text="Indosiar • Vidio"
-                        android:textColor="#CCCCCC"
-                        android:textSize="9sp"
+                        android:text="Gelora Bung Tomo • Indosiar"
+                        android:textColor="#A0A0A0"
+                        android:textSize="9.5sp"
                         android:fontFamily="@font/ntype" />
                 </RelativeLayout>
             </LinearLayout>

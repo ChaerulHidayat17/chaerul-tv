@@ -563,7 +563,7 @@
         </HorizontalScrollView>
 
         <!-- ======================================================== -->
-        <!-- SECTION 3: JADWAL PERSIB BANDUNG (GOOGLE SPORTS STYLE)   -->
+        <!-- SECTION 3: JADWAL PERSIB BANDUNG (RESMI GOOGLE 2026/2027)-->
         <!-- ======================================================== -->
         <RelativeLayout
             android:layout_width="match_parent"
@@ -597,7 +597,7 @@
                     android:paddingEnd="7dp"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
-                    android:text="LIGA 1 2024/2025"
+                    android:text="SUPER LEAGUE 2026/2027"
                     android:textColor="#FFFFFF"
                     android:textSize="9sp"
                     android:fontFamily="@font/ntype"
@@ -609,7 +609,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:text="Sumber: Google Sports • Tanggal, Jam &amp; Tahun Lengkap"
+                android:text="Sumber: Google Sports • Tanggal, Jam &amp; Tahun Lengkap (2026/2027)"
                 android:textColor="#88FFFFFF"
                 android:textSize="10.5sp"
                 android:fontFamily="@font/ntype" />
@@ -623,7 +623,7 @@
             android:orientation="horizontal"
             android:weightSum="3">
 
-            <!-- Card 1: NEXT MATCH (Terdekat) - Persib vs Persik -->
+            <!-- Card 1: MAIN HARI INI (Garudayaksa vs Persib) -->
             <LinearLayout
                 android:id="@+id/cardMatch1"
                 android:layout_width="0dp"
@@ -647,7 +647,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BRI LIGA 1 • PEKAN 25"
+                        android:text="SUPER LEAGUE • PEKAN 7"
                         android:textColor="#00A3FF"
                         android:textSize="9.5sp"
                         android:textStyle="bold"
@@ -662,7 +662,170 @@
                         android:paddingEnd="6dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:text="LAGA TERDEKAT"
+                        android:text="MAIN HARI INI"
+                        android:textColor="#FFFFFF"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/ntype" />
+                </RelativeLayout>
+
+                <!-- Center: Matchup Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="3">
+
+                    <!-- Home: Garudayaksa FC -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_garudayaksa"
+                            android:adjustViewBounds="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="GARUDAYAKSA"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10.5sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
+                    </LinearLayout>
+
+                    <!-- Center: VS & Kick-off Time -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="VS"
+                            android:textColor="#88FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="19:00 WIB"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
+                    </LinearLayout>
+
+                    <!-- Away: PERSIB -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/logo_persib"
+                            android:adjustViewBounds="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="PERSIB"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11.5sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/ntype" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Bottom: Full Date + Year & Stadium -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="Minggu, 25 Oktober 2026"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/ntype" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="Pakansari • Indosiar / Vidio"
+                        android:textColor="#A0A0A0"
+                        android:textSize="9.5sp"
+                        android:fontFamily="@font/ntype" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Card 2: ACL Two (Persib vs Melbourne Victory) -->
+            <LinearLayout
+                android:id="@+id/cardMatch2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/nothing_card_bg"
+                android:orientation="vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:focusable="true"
+                android:clickable="true">
+
+                <!-- Top bar of card -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ACL TWO • MATCHDAY 3"
+                        android:textColor="#5D9CEC"
+                        android:textSize="9.5sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/ntype" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/nothing_badge_blue"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="ASIA"
                         android:textColor="#FFFFFF"
                         android:textSize="9sp"
                         android:textStyle="bold"
@@ -723,14 +886,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20:30 WIB"
+                            android:text="19:15 WIB"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
 
-                    <!-- Away: Persik Kediri -->
+                    <!-- Away: Melbourne Victory -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -741,16 +904,16 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/logo_persik"
+                            android:src="@drawable/logo_melbourne_victory"
                             android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
-                            android:text="PERSIK"
+                            android:text="M. VICTORY"
                             android:textColor="#FFFFFF"
-                            android:textSize="11.5sp"
+                            android:textSize="10.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
@@ -767,7 +930,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Rabu, 05 Maret 2025"
+                        android:text="Rabu, 28 Oktober 2026"
                         android:textColor="#FFFFFF"
                         android:textSize="10.5sp"
                         android:textStyle="bold"
@@ -778,177 +941,14 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="GBLA • Indosiar / Vidio"
+                        android:text="Si Jalak Harupat • RCTI"
                         android:textColor="#A0A0A0"
                         android:textSize="9.5sp"
                         android:fontFamily="@font/ntype" />
                 </RelativeLayout>
             </LinearLayout>
 
-            <!-- Card 2: Semen Padang vs Persib -->
-            <LinearLayout
-                android:id="@+id/cardMatch2"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="3dp"
-                android:background="@drawable/nothing_card_bg"
-                android:orientation="vertical"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:focusable="true"
-                android:clickable="true">
-
-                <!-- Top bar of card -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="BRI LIGA 1 • PEKAN 26"
-                        android:textColor="#00A3FF"
-                        android:textSize="9.5sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/ntype" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:background="@drawable/nothing_badge_gray"
-                        android:paddingStart="6dp"
-                        android:paddingEnd="6dp"
-                        android:paddingTop="2dp"
-                        android:paddingBottom="2dp"
-                        android:text="UPCOMING"
-                        android:textColor="#FFFFFF"
-                        android:textSize="9sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/ntype" />
-                </RelativeLayout>
-
-                <!-- Center: Matchup Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:weightSum="3">
-
-                    <!-- Home: Semen Padang -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/logo_semen_padang"
-                            android:adjustViewBounds="true" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
-                            android:text="S. PADANG"
-                            android:textColor="#FFFFFF"
-                            android:textSize="11.5sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/ntype" />
-                    </LinearLayout>
-
-                    <!-- Center: VS & Kick-off Time -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="VS"
-                            android:textColor="#88FFFFFF"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/ntype" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="20:30 WIB"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/ntype" />
-                    </LinearLayout>
-
-                    <!-- Away: PERSIB -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/logo_persib"
-                            android:adjustViewBounds="true" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
-                            android:text="PERSIB"
-                            android:textColor="#FFFFFF"
-                            android:textSize="11.5sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/ntype" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Bottom: Full Date + Year & Stadium -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="4dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="Senin, 10 Maret 2025"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10.5sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/ntype" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:text="H. Agus Salim • Indosiar"
-                        android:textColor="#A0A0A0"
-                        android:textSize="9.5sp"
-                        android:fontFamily="@font/ntype" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <!-- Card 3: Persebaya vs Persib -->
+            <!-- Card 3: Super League Pekan 8 (Persib vs Isenmulang) -->
             <LinearLayout
                 android:id="@+id/cardMatch3"
                 android:layout_width="0dp"
@@ -972,7 +972,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BRI LIGA 1 • PEKAN 24"
+                        android:text="SUPER LEAGUE • PEKAN 8"
                         android:textColor="#00A3FF"
                         android:textSize="9.5sp"
                         android:textStyle="bold"
@@ -987,7 +987,7 @@
                         android:paddingEnd="6dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:text="BIG MATCH"
+                        android:text="KANDANG"
                         android:textColor="#FFFFFF"
                         android:textSize="9sp"
                         android:textStyle="bold"
@@ -1003,7 +1003,7 @@
                     android:gravity="center_vertical"
                     android:weightSum="3">
 
-                    <!-- Home: Persebaya -->
+                    <!-- Home: PERSIB -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -1014,14 +1014,14 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/logo_persebaya"
+                            android:src="@drawable/logo_persib"
                             android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
-                            android:text="PERSEBAYA"
+                            android:text="PERSIB"
                             android:textColor="#FFFFFF"
                             android:textSize="11.5sp"
                             android:textStyle="bold"
@@ -1048,14 +1048,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20:30 WIB"
+                            android:text="19:00 WIB"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
 
-                    <!-- Away: PERSIB -->
+                    <!-- Away: Isenmulang Kalteng -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -1066,16 +1066,16 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/logo_persib"
+                            android:src="@drawable/logo_kalteng"
                             android:adjustViewBounds="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
-                            android:text="PERSIB"
+                            android:text="ISENMULANG"
                             android:textColor="#FFFFFF"
-                            android:textSize="11.5sp"
+                            android:textSize="10.5sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/ntype" />
                     </LinearLayout>
@@ -1092,7 +1092,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Sabtu, 01 Maret 2025"
+                        android:text="Minggu, 01 November 2026"
                         android:textColor="#FFFFFF"
                         android:textSize="10.5sp"
                         android:textStyle="bold"
@@ -1103,7 +1103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="Gelora Bung Tomo • Indosiar"
+                        android:text="Si Jalak Harupat • Indosiar"
                         android:textColor="#A0A0A0"
                         android:textSize="9.5sp"
                         android:fontFamily="@font/ntype" />

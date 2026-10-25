@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Circle/Shield Background (Navy Blue & White) -->
+    <path
+        android:fillColor="#0D1E38"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.2"
+        android:pathData="M11,10h26c0,18 -13,31 -13,34c0,-3 -13,-16 -13,-34z" />
+    <!-- Red Accent Top Banner (Singapore Flag / Lion City colors) -->
+    <path
+        android:fillColor="#E31837"
+        android:pathData="M14,13h20v6h-20z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,19h20v2h-20z" />
+    <!-- Lion Head / Anchor Sailors Motif (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,24c-3.3,0 -6,2.7 -6,6c0,4 6,10 6,10s6,-6 6,-10c0,-3.3 -2.7,-6 -6,-6zm0,8.5c-1.4,0 -2.5,-1.1 -2.5,-2.5s1.1,-2.5 2.5,-2.5 2.5,1.1 2.5,2.5 -1.1,2.5 -2.5,2.5z" />
+    <!-- Crown / Mane Ticks -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M22,14l2,-2 2,2 -1,1 -1,-0.5 -1,0.5z" />
+</vector>

@@ -135,8 +135,8 @@ public class NothingUiManager {
         loadInstalledApps();
         setupAppDock(layout);
 
-        // Bottom Action Bar
-        setupBottomActionBar(layout);
+        // Bottom: Persib Bandung Matchday Section
+        setupPersibSection(layout);
 
         // Screen 02: ALL APPS
         setupScreenAllApps(layout);
@@ -677,24 +677,44 @@ public class NothingUiManager {
         return item;
     }
 
-    private void setupBottomActionBar(View layout) {
-        View btnLiveTv = layout.findViewById(R.id.btnQuickLiveTv);
-        View btnMedia = layout.findViewById(R.id.btnQuickMedia);
-        View btnCustomize = layout.findViewById(R.id.btnQuickCustomize);
-        View btnSettingsPill = layout.findViewById(R.id.btnQuickSettingsPill);
+    private void setupPersibSection(View layout) {
+        View card1 = layout.findViewById(R.id.cardMatch1);
+        View card2 = layout.findViewById(R.id.cardMatch2);
+        View card3 = layout.findViewById(R.id.cardMatch3);
 
-        btnLiveTv.setOnClickListener(v -> launchApp("com.mitv.livetv"));
-        btnMedia.setOnClickListener(v -> launchApp("org.videolan.vlc"));
-        btnCustomize.setOnClickListener(v -> showScreen(R.id.screenQuickSettings));
-        btnSettingsPill.setOnClickListener(v -> showScreen(R.id.screenQuickSettings));
+        // Next Match: Persib vs Lion City Sailors (ACL Two) -> Launch Live TV (RCTI)
+        if (card1 != null) {
+            card1.setOnClickListener(v -> launchApp("com.mitv.livetv"));
+        }
 
-        View[] bottomPills = {btnLiveTv, btnMedia, btnCustomize, btnSettingsPill};
-        for (View p : bottomPills) {
-            if (p instanceof TextView) {
-                TextView tv = (TextView) p;
-                tv.setOnFocusChangeListener((v, hasFocus) -> {
-                    tv.setBackgroundResource(hasFocus ? R.drawable.nothing_pill_white : R.drawable.nothing_pill_dark);
-                    tv.setTextColor(hasFocus ? Color.BLACK : Color.WHITE);
+        // Upcoming 1: Persik vs Persib (BRI Liga 1) -> Launch Vidio / Live TV
+        if (card2 != null) {
+            card2.setOnClickListener(v -> {
+                if (!launchApp("com.vidio.android.tv")) {
+                    launchApp("com.mitv.livetv");
+                }
+            });
+        }
+
+        // Upcoming 2: Persib vs Semen Padang (BRI Liga 1) -> Launch Vidio / Live TV
+        if (card3 != null) {
+            card3.setOnClickListener(v -> {
+                if (!launchApp("com.vidio.android.tv")) {
+                    launchApp("com.mitv.livetv");
+                }
+            });
+        }
+
+        View[] matchCards = {card1, card2, card3};
+        for (View card : matchCards) {
+            if (card != null) {
+                card.setOnFocusChangeListener((v, hasFocus) -> {
+                    v.setBackgroundResource(hasFocus ? R.drawable.nothing_match_card_focused : R.drawable.nothing_card_bg);
+                    v.animate()
+                            .scaleX(hasFocus ? 1.02f : 1.0f)
+                            .scaleY(hasFocus ? 1.02f : 1.0f)
+                            .setDuration(150)
+                            .start();
                 });
             }
         }
@@ -942,14 +962,14 @@ public class NothingUiManager {
         }
     }
 
-    private void launchApp(String packageName) {
+    private boolean launchApp(String packageName) {
         try {
             if ("com.mitv.livetv".equals(packageName)) {
                 Intent intent = new Intent();
                 intent.setComponent(new ComponentName("com.mitv.livetv", "com.mitv.livetv.tv.MainActivity"));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 activity.startActivity(intent);
-                return;
+                return true;
             }
             Intent launchIntent = activity.getPackageManager().getLeanbackLaunchIntentForPackage(packageName);
             if (launchIntent == null) {
@@ -958,12 +978,12 @@ public class NothingUiManager {
             if (launchIntent != null) {
                 launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 activity.startActivity(launchIntent);
-            } else {
-                Toast.makeText(activity, "App not found: " + packageName, Toast.LENGTH_SHORT).show();
+                return true;
             }
         } catch (Exception e) {
-            Toast.makeText(activity, "Failed to launch: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            // Log or fallback
         }
+        return false;
     }
 
     // ------------------------------------------------------------------------

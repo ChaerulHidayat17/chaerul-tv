@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer Shield Frame (Purple / Ungu Persik) -->
+    <path
+        android:fillColor="#4B1248"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.2"
+        android:pathData="M11,10h26c0,18 -13,31 -13,34c0,-3 -13,-16 -13,-34z" />
+    <!-- Yellow/Gold Border -->
+    <path
+        android:strokeColor="#FFC72C"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M14,13h20c0,13 -10,23 -10,25c0,-2 -10,-12 -10,-25z" />
+    <!-- White Tiger / Macan Putih Motif -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,19c-4,0 -7,3 -7,7c0,5 5,9 7,11c2,-2 7,-6 7,-11c0,-4 -3,-7 -7,-7zm-2.5,5c0.8,0 1.5,0.7 1.5,1.5s-0.7,1.5 -1.5,1.5 -1.5,-0.7 -1.5,-1.5 0.7,-1.5 1.5,-1.5zm5,0c0.8,0 1.5,0.7 1.5,1.5s-0.7,1.5 -1.5,1.5 -1.5,-0.7 -1.5,-1.5 0.7,-1.5 1.5,-1.5zm-2.5,7c-1.5,0 -2.5,-0.8 -2.5,-1.5h5c0,0.7 -1,1.5 -2.5,1.5z" />
+</vector>

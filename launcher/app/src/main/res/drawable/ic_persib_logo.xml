@@ -1,0 +1,48 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Two Championship Stars on Top -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M18,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z" />
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M30,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z" />
+    <!-- Outer Shield Frame (Royal Blue) -->
+    <path
+        android:fillColor="#0B48A3"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.2"
+        android:pathData="M10,13h28c0,16 -14,28 -14,32c0,-4 -14,-16 -14,-32z" />
+    <!-- Inner Gold/Yellow Accent Ring -->
+    <path
+        android:strokeColor="#FFD700"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M13,15h22c0,13 -11,23 -11,26c0,-3 -11,-13 -11,-26z" />
+    <!-- Inner Shield Colors: Blue, Yellow, Green -->
+    <!-- Center Vertical Stripes / City of Bandung Emblem Motif -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M16,21h16v6h-16z" />
+    <path
+        android:fillColor="#008837"
+        android:pathData="M16,27h16v6h-16z" />
+    <!-- PERSIB Top Banner Area -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,16h18v4h-18z" />
+    <!-- PERSIB Text representation / Bars -->
+    <path
+        android:fillColor="#0B48A3"
+        android:pathData="M17,17h14v2h-14z" />
+    <!-- Ball / Crest core -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,35c-2.5,0 -4.5,-2 -4.5,-4.5s2,-4.5 4.5,-4.5 4.5,2 4.5,4.5 -2,4.5 -4.5,4.5z" />
+    <path
+        android:fillColor="#0B48A3"
+        android:pathData="M24,33c-1.4,0 -2.5,-1.1 -2.5,-2.5s1.1,-2.5 2.5,-2.5 2.5,1.1 2.5,2.5 -1.1,2.5 -2.5,2.5z" />
+</vector>

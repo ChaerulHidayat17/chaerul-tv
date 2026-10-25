@@ -23,7 +23,8 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 30px 56px 22px 56px;
+    justify-content: space-between;
+    padding: 22px 56px 18px 56px;
     user-select: none;
   }
 
@@ -34,8 +35,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 36px;
-    margin-bottom: 22px;
+    height: 34px;
+    flex-shrink: 0;
   }
 
   .logo {
@@ -52,13 +53,13 @@
   }
 
   .tab {
-    height: 32px;
-    padding: 0 20px;
-    border-radius: 16px;
+    height: 30px;
+    padding: 0 18px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 600;
   }
 
@@ -79,8 +80,8 @@
   }
 
   .action-btn {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: #161616;
     border: 1px solid #282828;
@@ -90,38 +91,40 @@
   }
 
   .action-btn svg {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     fill: #CCCCCC;
   }
 
   .profile-avatar {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: #D71920;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     color: #FFFFFF;
   }
 
   /* ------------------------------------------------------------- */
-  /* SECTION 1: WIDGETS ROW (Height 156px)                         */
+  /* SECTION 1: WIDGETS ROW (Height 136px)                         */
   /* ------------------------------------------------------------- */
   .widgets-row {
     display: grid;
-    grid-template-columns: 156px 120px 1fr 254px;
+    grid-template-columns: 136px 116px 1fr 248px;
     gap: 12px;
-    height: 156px;
+    height: 136px;
+    margin-top: 10px;
+    flex-shrink: 0;
   }
 
   .card {
     background: #141414;
     border: 1px solid #222222;
-    border-radius: 18px;
+    border-radius: 16px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -131,7 +134,7 @@
   .clock-card {
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 8px;
   }
 
   /* 2. Calendar */
@@ -139,7 +142,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 12px 10px;
+    padding: 10px 8px;
   }
 
   .cal-day {
@@ -151,15 +154,15 @@
 
   .cal-date {
     font-family: 'NDot57', sans-serif;
-    font-size: 56px;
+    font-size: 48px;
     line-height: 1;
     color: #FFFFFF;
-    margin: 4px 0;
+    margin: 3px 0;
   }
 
   .cal-month {
     font-family: 'NDot57', sans-serif;
-    font-size: 11px;
+    font-size: 10.5px;
     color: #D71920;
     font-weight: 700;
     letter-spacing: 1px;
@@ -168,7 +171,7 @@
   /* 3. Prayer Times */
   .prayer-card {
     justify-content: space-between;
-    padding: 16px 20px;
+    padding: 12px 16px;
   }
 
   .prayer-top {
@@ -178,7 +181,7 @@
   }
 
   .prayer-title {
-    font-size: 11px;
+    font-size: 10.5px;
     color: #888888;
     letter-spacing: 1.5px;
     font-weight: 500;
@@ -186,7 +189,7 @@
 
   .prayer-time-big {
     font-family: 'NDot57', sans-serif;
-    font-size: 32px;
+    font-size: 26px;
     color: #FFFFFF;
     margin-top: 2px;
     display: flex;
@@ -206,7 +209,7 @@
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.8px;
-    padding: 3px 8px;
+    padding: 2.5px 7px;
     border-radius: 4px;
   }
 
@@ -214,7 +217,7 @@
     height: 1px;
     background: #242424;
     width: 100%;
-    margin: 6px 0;
+    margin: 4px 0;
   }
 
   .prayer-timeline {
@@ -223,8 +226,8 @@
   }
 
   .pt-item { text-align: center; }
-  .pt-name { font-size: 9px; color: #666666; letter-spacing: 0.5px; }
-  .pt-val { font-size: 12.5px; color: #FFFFFF; margin-top: 2px; font-weight: 500; }
+  .pt-name { font-size: 8.5px; color: #666666; letter-spacing: 0.5px; }
+  .pt-val { font-size: 11.5px; color: #FFFFFF; margin-top: 2px; font-weight: 500; }
 
   /* 4. Right Widget Stack */
   .right-stack {
@@ -236,12 +239,12 @@
 
   .hdmi-white-card {
     background: #FFFFFF;
-    border-radius: 16px;
-    height: 72px;
+    border-radius: 14px;
+    height: 62px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 14px;
     position: relative;
     box-shadow: 0 4px 14px rgba(255, 255, 255, 0.08);
   }
@@ -249,69 +252,69 @@
   .hdmi-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   .hdmi-left svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     fill: #000000;
   }
 
   .hdmi-title {
-    font-size: 14.5px;
+    font-size: 13.5px;
     font-weight: 700;
     color: #000000;
   }
 
   .hdmi-sub {
-    font-size: 11px;
+    font-size: 10.5px;
     color: #666666;
   }
 
   .red-dot-accent {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: #D71920;
     position: absolute;
-    top: 12px;
-    right: 14px;
+    top: 10px;
+    right: 12px;
   }
 
   .right-bottom-row {
     display: flex;
-    gap: 10px;
-    height: 74px;
+    gap: 8px;
+    height: 64px;
   }
 
   .wifi-card {
     flex: 1;
     background: #141414;
     border: 1px solid #222222;
-    border-radius: 16px;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 3px;
   }
 
   .wifi-card svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     fill: #FFFFFF;
   }
 
   .wifi-card .card-text {
-    font-size: 11px;
+    font-size: 10px;
     color: #CCCCCC;
   }
 
   .sleep-card {
     flex: 1;
     background: #D71920;
-    border-radius: 16px;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -321,46 +324,47 @@
   }
 
   .sleep-card svg {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     fill: #FFFFFF;
   }
 
   .sleep-card .card-text-top {
-    font-size: 9.5px;
+    font-size: 9px;
     color: #FFFFFF;
     opacity: 0.95;
   }
 
   .sleep-card .card-text-bold {
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 700;
     color: #FFFFFF;
   }
 
   /* ------------------------------------------------------------- */
-  /* SECTION 2: YOUR APPS (Tight Gap: 18px from Section 1!)        */
+  /* SECTION 2: YOUR APPS (Height ~88px)                           */
   /* ------------------------------------------------------------- */
   .apps-section {
-    margin-top: 18px;
+    margin-top: 12px;
+    flex-shrink: 0;
   }
 
   .section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   .section-title {
     font-family: 'NDot57', sans-serif;
-    font-size: 14px;
+    font-size: 13.5px;
     letter-spacing: 1.5px;
     color: #FFFFFF;
   }
 
   .section-hint {
-    font-size: 11px;
+    font-size: 10.5px;
     color: #666666;
   }
 
@@ -368,7 +372,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 88px;
+    height: 80px;
     width: 100%;
   }
 
@@ -382,26 +386,26 @@
   .dock-item.focused .dock-pill {
     background: #D71920;
     border: 2px solid #FFFFFF;
-    height: 58px;
-    width: 175px;
-    padding: 0 18px;
-    border-radius: 29px;
+    height: 52px;
+    width: 170px;
+    padding: 0 16px;
+    border-radius: 26px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 12px;
+    gap: 10px;
     box-shadow: 0 0 25px rgba(215, 25, 32, 0.5);
     transform: scale(1.02);
   }
 
   .dock-item.focused .dock-pill .app-icon {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     fill: #FFFFFF;
   }
 
   .dock-item.focused .dock-pill .app-label-inside {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     color: #FFFFFF;
     display: block;
@@ -415,8 +419,8 @@
   .dock-item .dock-pill {
     background: #1C1C1E;
     border: 1px solid #2C2C2E;
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -425,8 +429,8 @@
   }
 
   .dock-item .dock-pill .app-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     fill: #FFFFFF;
   }
 
@@ -435,11 +439,11 @@
   }
 
   .dock-item .app-label-bottom {
-    font-size: 11px;
+    font-size: 10px;
     color: #CCCCCC;
-    margin-top: 6px;
+    margin-top: 5px;
     text-align: center;
-    width: 72px;
+    width: 68px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -455,63 +459,228 @@
   }
 
   /* ------------------------------------------------------------- */
-  /* SECTION 3: QUICK ACTIONS (Tight Gap: 16px from Section 2!)    */
+  /* SECTION 3: PERSIB BANDUNG FIXTURES (Replacing Action Pills)   */
   /* ------------------------------------------------------------- */
-  .quick-actions {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    width: 100%;
-    margin-top: 16px;
+  .persib-section {
+    margin-top: 12px;
+    flex-shrink: 0;
   }
 
-  .action-pill {
-    height: 40px;
+  .persib-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .persib-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .persib-title {
+    font-family: 'NDot57', sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+  }
+
+  .persib-badge-next {
+    background: #D71920;
+    color: #FFFFFF;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 2.5px 7px;
+    border-radius: 4px;
+  }
+
+  .persib-sub {
+    font-size: 10.5px;
+    color: #888888;
+  }
+
+  /* 3 Match Cards Grid */
+  .persib-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    height: 140px;
+  }
+
+  .match-card {
     background: #141414;
     border: 1px solid #242424;
-    border-radius: 20px;
-    font-size: 12.5px;
-    font-weight: 500;
+    border-radius: 16px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .match-card.focused {
+    background: #1B1B1E;
+    border: 1.5px solid #FFFFFF;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+  }
+
+  .match-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .comp-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .comp-tag.acl {
+    color: #5D9CEC;
+  }
+
+  .comp-tag.liga1 {
+    color: #48CFAD;
+  }
+
+  .match-date-badge {
+    background: #202020;
+    border: 1px solid #303030;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 9px;
+    color: #FFFFFF;
+    font-family: 'NDot57', sans-serif;
+  }
+
+  .match-date-badge.red {
+    background: #D71920;
+    border-color: #D71920;
+  }
+
+  /* Center Matchup Row */
+  .matchup-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 0;
+  }
+
+  .team-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 82px;
+    text-align: center;
+  }
+
+  .team-crest {
+    width: 42px;
+    height: 42px;
+  }
+
+  .team-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 3px;
+    letter-spacing: 0.3px;
+  }
+
+  .vs-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vs-text {
+    font-family: 'NDot57', sans-serif;
+    font-size: 13px;
+    color: #666666;
+  }
+
+  .match-time-big {
+    font-family: 'NDot57', sans-serif;
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-top: 1px;
+  }
+
+  /* Bottom Details Row */
+  .match-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 6px;
+    border-top: 1px solid #202020;
+    font-size: 9.5px;
+    color: #777777;
+  }
+
+  .stadium-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 65%;
+  }
+
+  .broadcast-pill {
+    background: #1C1C1E;
+    border: 1px solid #2E2E2E;
+    border-radius: 8px;
+    padding: 2px 7px;
+    font-size: 9px;
+    font-weight: 600;
     color: #CCCCCC;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0 18px;
-    gap: 10px;
-    cursor: pointer;
+    gap: 4px;
   }
 
-  .action-pill svg {
-    width: 17px;
-    height: 17px;
-    fill: #AAAAAA;
+  .live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #D71920;
   }
 
   /* ------------------------------------------------------------- */
   /* FOOTER                                                        */
   /* ------------------------------------------------------------- */
-  .footer-spacer {
-    flex-grow: 1;
-  }
-
   .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20px;
-    padding-top: 10px;
+    height: 18px;
+    margin-top: 10px;
+    padding-top: 8px;
     border-top: 1px solid #141414;
+    flex-shrink: 0;
   }
 
   .footer-hints {
-    font-size: 10px;
+    font-size: 9.5px;
     color: #555555;
     letter-spacing: 1px;
   }
 
   .footer-code {
     font-family: 'NDot57', sans-serif;
-    font-size: 11px;
+    font-size: 10.5px;
     color: #888888;
     letter-spacing: 1.5px;
   }
@@ -546,7 +715,7 @@
   <div class="widgets-row">
     <!-- 1. Analog Clock -->
     <div class="card clock-card">
-      <svg width="124" height="124" viewBox="0 0 120 120">
+      <svg width="112" height="112" viewBox="0 0 120 120">
         <circle cx="60" cy="60" r="54" fill="none" stroke="#2A2A2A" stroke-width="1.5" />
         <circle cx="60" cy="14" r="2.2" fill="#888888" />
         <circle cx="83" cy="20" r="1.6" fill="#555555" />
@@ -570,7 +739,7 @@
     <div class="card cal-card">
       <div class="cal-day">SABTU</div>
       <div class="cal-date">24</div>
-      <div class="cal-month">OCT / 2026</div>
+      <div class="cal-month">OKT / 2026</div>
     </div>
 
     <!-- 3. Prayer Times -->
@@ -578,18 +747,18 @@
       <div class="prayer-top">
         <div>
           <div class="prayer-title">PRAYER TIMES</div>
-          <div class="prayer-time-big">04:11 <span class="prayer-sub">Tomorrow</span></div>
+          <div class="prayer-time-big">11:38 <span class="prayer-sub">Dzuhur</span></div>
         </div>
-        <div class="badge-red">NEXT: FAJR</div>
+        <div class="badge-red">NEXT: DHUHR</div>
       </div>
       <div class="divider"></div>
       <div class="prayer-timeline">
         <div class="pt-item"><div class="pt-name">FAJR</div><div class="pt-val">04:11</div></div>
-        <div class="pt-item"><div class="pt-name">SUNRISE</div><div class="pt-val">05:28</div></div>
-        <div class="pt-item"><div class="pt-name">DHUHR</div><div class="pt-val">11:39</div></div>
-        <div class="pt-item"><div class="pt-name">ASR</div><div class="pt-val">14:53</div></div>
-        <div class="pt-item"><div class="pt-name">MAGHRIB</div><div class="pt-val">17:49</div></div>
-        <div class="pt-item"><div class="pt-name">ISHA</div><div class="pt-val">18:59</div></div>
+        <div class="pt-item"><div class="pt-name">SUNRISE</div><div class="pt-val">05:25</div></div>
+        <div class="pt-item"><div class="pt-name">DHUHR</div><div class="pt-val">11:38</div></div>
+        <div class="pt-item"><div class="pt-name">ASR</div><div class="pt-val">14:50</div></div>
+        <div class="pt-item"><div class="pt-name">MAGHRIB</div><div class="pt-val">17:47</div></div>
+        <div class="pt-item"><div class="pt-name">ISHA</div><div class="pt-val">18:58</div></div>
       </div>
     </div>
 
@@ -625,7 +794,7 @@
     </div>
   </div>
 
-  <!-- SECTION 2: YOUR APPS (Tight Gap: 18px from Section 1!) -->
+  <!-- SECTION 2: YOUR APPS -->
   <div class="apps-section">
     <div class="section-header">
       <div class="section-title">YOUR APPS</div>
@@ -717,27 +886,187 @@
     </div>
   </div>
 
-  <!-- SECTION 3: QUICK ACTION PILLS ROW (Tight Gap: 16px from Section 2!) -->
-  <div class="quick-actions">
-    <div class="action-pill">
-      <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-      Live TV
+  <!-- ------------------------------------------------------------- -->
+  <!-- SECTION 3: PERSIB BANDUNG FIXTURES (Replacing Action Pills)   -->
+  <!-- ------------------------------------------------------------- -->
+  <div class="persib-section">
+    <div class="persib-header">
+      <div class="persib-title-wrap">
+        <span class="persib-title">PERSIB MATCHDAY</span>
+        <span class="persib-badge-next">NEXT MATCH</span>
+      </div>
+      <span class="persib-sub">Jadwal Resmi Pangeran Biru &bull; AFC Champions League Two &amp; BRI Liga 1</span>
     </div>
-    <div class="action-pill">
-      <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-      Media library
-    </div>
-    <div class="action-pill">
-      <svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
-      Customize
-    </div>
-    <div class="action-pill">
-      <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
-      Quick settings
+
+    <div class="persib-grid">
+      <!-- Card 1: NEXT MATCH (Terdekat) - ACL TWO -->
+      <div class="match-card featured focused">
+        <div class="match-card-top">
+          <div class="comp-tag acl">
+            <svg style="width:12px;height:12px;fill:#5D9CEC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+            ACL TWO &bull; MATCHDAY 3
+          </div>
+          <div class="match-date-badge red">KAMIS, 24 OKT</div>
+        </div>
+
+        <div class="matchup-row">
+          <!-- Persib (Home) -->
+          <div class="team-col">
+            <svg class="team-crest" viewBox="0 0 48 48">
+              <path fill="#FFD700" d="M18,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z"/>
+              <path fill="#FFD700" d="M30,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z"/>
+              <path fill="#0B48A3" stroke="#FFFFFF" stroke-width="1.2" d="M10,13h28c0,16 -14,28 -14,32c0,-4 -14,-16 -14,-32z"/>
+              <path stroke="#FFD700" stroke-width="1.5" fill="none" d="M13,15h22c0,13 -11,23 -11,26c0,-3 -11,-13 -11,-26z"/>
+              <path fill="#FFD700" d="M16,21h16v6h-16z"/>
+              <path fill="#008837" d="M16,27h16v6h-16z"/>
+              <path fill="#FFFFFF" d="M15,16h18v4h-18z"/>
+              <path fill="#0B48A3" d="M17,17h14v2h-14z"/>
+              <circle cx="24" cy="30.5" r="3.5" fill="#FFFFFF"/>
+            </svg>
+            <span class="team-name">PERSIB</span>
+          </div>
+
+          <!-- Center VS & Time -->
+          <div class="vs-col">
+            <span class="vs-text">VS</span>
+            <span class="match-time-big">19:15</span>
+          </div>
+
+          <!-- Lion City Sailors (Away) -->
+          <div class="team-col">
+            <svg class="team-crest" viewBox="0 0 48 48">
+              <path fill="#0D1E38" stroke="#FFFFFF" stroke-width="1.2" d="M11,10h26c0,18 -13,31 -13,34c0,-3 -13,-16 -13,-34z"/>
+              <path fill="#E31837" d="M14,13h20v6h-20z"/>
+              <path fill="#FFFFFF" d="M14,19h20v2h-20z"/>
+              <path fill="#FFFFFF" d="M24,24c-3.3,0 -6,2.7 -6,6c0,4 6,10 6,10s6,-6 6,-10c0,-3.3 -2.7,-6 -6,-6zm0,8.5c-1.4,0 -2.5,-1.1 -2.5,-2.5s1.1,-2.5 2.5,-2.5 2.5,1.1 2.5,2.5 -1.1,2.5 -2.5,2.5z"/>
+              <path fill="#FFD700" d="M22,14l2,-2 2,2 -1,1 -1,-0.5 -1,0.5z"/>
+            </svg>
+            <span class="team-name">LION CITY</span>
+          </div>
+        </div>
+
+        <div class="match-card-bottom">
+          <div class="stadium-text">
+            <svg style="width:11px;height:11px;fill:#888888" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10,-2.24 10,-5V7c0,-2.76 -4.48,-5 -10,-5zm0 2c4.41 0 8 1.57 8 3s-3.59 3 -8 3 -8,-1.57 -8,-3 3.59,-3 8,-3zm8 13c0 1.43 -3.59 3 -8 3s-8,-1.57 -8,-3v-2.14c2.14,1.31 5.04,2.14 8,2.14s5.86,-0.83 8,-2.14V17zm0,-4c0 1.43 -3.59 3 -8 3s-8,-1.57 -8,-3v-2.14c2.14,1.31 5.04,2.14 8,2.14s5.86,-0.83 8,-2.14V13z"/></svg>
+            Si Jalak Harupat
+          </div>
+          <div class="broadcast-pill">
+            <div class="live-dot"></div>
+            RCTI &bull; Vision+
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: UPCOMING - BRI LIGA 1 -->
+      <div class="match-card">
+        <div class="match-card-top">
+          <div class="comp-tag liga1">
+            <svg style="width:12px;height:12px;fill:#48CFAD" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+            BRI LIGA 1 &bull; PEKAN 9
+          </div>
+          <div class="match-date-badge">SENIN, 28 OKT</div>
+        </div>
+
+        <div class="matchup-row">
+          <!-- Persik Kediri (Home) -->
+          <div class="team-col">
+            <svg class="team-crest" viewBox="0 0 48 48">
+              <path fill="#4B1248" stroke="#FFFFFF" stroke-width="1.2" d="M11,10h26c0,18 -13,31 -13,34c0,-3 -13,-16 -13,-34z"/>
+              <path stroke="#FFC72C" stroke-width="1.5" fill="none" d="M14,13h20c0,13 -10,23 -10,25c0,-2 -10,-12 -10,-25z"/>
+              <path fill="#FFFFFF" d="M24,19c-4,0 -7,3 -7,7c0,5 5,9 7,11c2,-2 7,-6 7,-11c0,-4 -3,-7 -7,-7zm-2.5,5c0.8,0 1.5,0.7 1.5,1.5s-0.7,1.5 -1.5,1.5 -1.5,-0.7 -1.5,-1.5 0.7,-1.5 1.5,-1.5zm5,0c0.8,0 1.5,0.7 1.5,1.5s-0.7,1.5 -1.5,1.5 -1.5,-0.7 -1.5,-1.5 0.7,-1.5 1.5,-1.5zm-2.5,7c-1.5,0 -2.5,-0.8 -2.5,-1.5h5c0,0.7 -1,1.5 -2.5,1.5z"/>
+            </svg>
+            <span class="team-name">PERSIK</span>
+          </div>
+
+          <!-- Center VS & Time -->
+          <div class="vs-col">
+            <span class="vs-text">VS</span>
+            <span class="match-time-big">19:00</span>
+          </div>
+
+          <!-- Persib (Away) -->
+          <div class="team-col">
+            <svg class="team-crest" viewBox="0 0 48 48">
+              <path fill="#FFD700" d="M18,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z"/>
+              <path fill="#FFD700" d="M30,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z"/>
+              <path fill="#0B48A3" stroke="#FFFFFF" stroke-width="1.2" d="M10,13h28c0,16 -14,28 -14,32c0,-4 -14,-16 -14,-32z"/>
+              <path stroke="#FFD700" stroke-width="1.5" fill="none" d="M13,15h22c0,13 -11,23 -11,26c0,-3 -11,-13 -11,-26z"/>
+              <path fill="#FFD700" d="M16,21h16v6h-16z"/>
+              <path fill="#008837" d="M16,27h16v6h-16z"/>
+              <path fill="#FFFFFF" d="M15,16h18v4h-18z"/>
+              <circle cx="24" cy="30.5" r="3.5" fill="#FFFFFF"/>
+            </svg>
+            <span class="team-name">PERSIB</span>
+          </div>
+        </div>
+
+        <div class="match-card-bottom">
+          <div class="stadium-text">
+            <svg style="width:11px;height:11px;fill:#888888" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10,-2.24 10,-5V7c0,-2.76 -4.48,-5 -10,-5zm0 2c4.41 0 8 1.57 8 3s-3.59 3 -8 3 -8,-1.57 -8,-3 3.59,-3 8,-3zm8 13c0 1.43 -3.59 3 -8 3s-8,-1.57 -8,-3v-2.14c2.14,1.31 5.04,2.14 8,2.14s5.86,-0.83 8,-2.14V17zm0,-4c0 1.43 -3.59 3 -8 3s-8,-1.57 -8,-3v-2.14c2.14,1.31 5.04,2.14 8,2.14s5.86,-0.83 8,-2.14V13z"/></svg>
+            Stadion Brawijaya
+          </div>
+          <div class="broadcast-pill">
+            Indosiar &bull; Vidio
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: UPCOMING - BRI LIGA 1 -->
+      <div class="match-card">
+        <div class="match-card-top">
+          <div class="comp-tag liga1">
+            <svg style="width:12px;height:12px;fill:#48CFAD" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+            BRI LIGA 1 &bull; PEKAN 10
+          </div>
+          <div class="match-date-badge">JUMAT, 01 NOV</div>
+        </div>
+
+        <div class="matchup-row">
+          <!-- Persib (Home) -->
+          <div class="team-col">
+            <svg class="team-crest" viewBox="0 0 48 48">
+              <path fill="#FFD700" d="M18,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z"/>
+              <path fill="#FFD700" d="M30,3l1.2,3.6h3.8l-3.1,2.2 1.2,3.6 -3.1,-2.2 -3.1,2.2 1.2,-3.6 -3.1,-2.2h3.8z"/>
+              <path fill="#0B48A3" stroke="#FFFFFF" stroke-width="1.2" d="M10,13h28c0,16 -14,28 -14,32c0,-4 -14,-16 -14,-32z"/>
+              <path stroke="#FFD700" stroke-width="1.5" fill="none" d="M13,15h22c0,13 -11,23 -11,26c0,-3 -11,-13 -11,-26z"/>
+              <path fill="#FFD700" d="M16,21h16v6h-16z"/>
+              <path fill="#008837" d="M16,27h16v6h-16z"/>
+              <path fill="#FFFFFF" d="M15,16h18v4h-18z"/>
+              <circle cx="24" cy="30.5" r="3.5" fill="#FFFFFF"/>
+            </svg>
+            <span class="team-name">PERSIB</span>
+          </div>
+
+          <!-- Center VS & Time -->
+          <div class="vs-col">
+            <span class="vs-text">VS</span>
+            <span class="match-time-big">19:00</span>
+          </div>
+
+          <!-- Semen Padang (Away) -->
+          <div class="team-col">
+            <svg class="team-crest" viewBox="0 0 48 48">
+              <path fill="#C8102E" stroke="#FFFFFF" stroke-width="1.2" d="M11,10h26c0,18 -13,31 -13,34c0,-3 -13,-16 -13,-34z"/>
+              <path stroke="#FFC72C" stroke-width="1.5" fill="none" d="M14,13h20c0,13 -10,23 -10,25c0,-2 -10,-12 -10,-25z"/>
+              <path fill="#FFC72C" d="M24,20c-5,0 -9,4 -9,9c0,5 9,10 9,10s9,-5 9,-10c0,-5 -4,-9 -9,-9z"/>
+              <path fill="#000000" d="M24,23c-3,0 -5.5,2.5 -5.5,5.5s2.5,5.5 5.5,5.5 5.5,-2.5 5.5,-5.5 -2.5,-5.5 -5.5,-5.5z"/>
+            </svg>
+            <span class="team-name">S. PADANG</span>
+          </div>
+        </div>
+
+        <div class="match-card-bottom">
+          <div class="stadium-text">
+            <svg style="width:11px;height:11px;fill:#888888" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10,-2.24 10,-5V7c0,-2.76 -4.48,-5 -10,-5zm0 2c4.41 0 8 1.57 8 3s-3.59 3 -8 3 -8,-1.57 -8,-3 3.59,-3 8,-3zm8 13c0 1.43 -3.59 3 -8 3s-8,-1.57 -8,-3v-2.14c2.14,1.31 5.04,2.14 8,2.14s5.86,-0.83 8,-2.14V17zm0,-4c0 1.43 -3.59 3 -8 3s-8,-1.57 -8,-3v-2.14c2.14,1.31 5.04,2.14 8,2.14s5.86,-0.83 8,-2.14V13z"/></svg>
+            Si Jalak Harupat
+          </div>
+          <div class="broadcast-pill">
+            Indosiar &bull; Vidio
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="footer-spacer"></div>
 
   <!-- FOOTER -->
   <div class="footer">

@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer Shield Frame (Red / Merah Semen Padang) -->
+    <path
+        android:fillColor="#C8102E"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.2"
+        android:pathData="M11,10h26c0,18 -13,31 -13,34c0,-3 -13,-16 -13,-34z" />
+    <!-- Yellow/Gold Inner Border -->
+    <path
+        android:strokeColor="#FFC72C"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M14,13h20c0,13 -10,23 -10,25c0,-2 -10,-12 -10,-25z" />
+    <!-- Kabau Sirah / Buffalo Horns Motif (Yellow & White) -->
+    <path
+        android:fillColor="#FFC72C"
+        android:pathData="M24,20c-5,0 -9,4 -9,9c0,5 9,10 9,10s9,-5 9,-10c0,-5 -4,-9 -9,-9z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M24,23c-3,0 -5.5,2.5 -5.5,5.5s2.5,5.5 5.5,5.5 5.5,-2.5 5.5,-5.5 -2.5,-5.5 -5.5,-5.5z" />
+    <!-- Horns -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,21c1,-2 4,-4 7,-4s6,2 7,4c-1,-1 -4,-2 -7,-2s-6,1 -7,2z" />
+</vector>

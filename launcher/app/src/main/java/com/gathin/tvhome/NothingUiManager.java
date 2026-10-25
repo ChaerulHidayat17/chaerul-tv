@@ -680,32 +680,26 @@ public class NothingUiManager {
     private void setupPersibSection(View layout) {
         View card1 = layout.findViewById(R.id.cardMatch1);
         View card2 = layout.findViewById(R.id.cardMatch2);
-        View card3 = layout.findViewById(R.id.cardMatch3);
 
-        // Next Match: Persib vs Lion City Sailors (ACL Two) -> Launch Live TV (RCTI)
+        // Section 1: Laga Terdekat (Garudayaksa vs Persib) -> Launch Live TV / Vidio
         if (card1 != null) {
-            card1.setOnClickListener(v -> launchApp("com.mitv.livetv"));
+            card1.setOnClickListener(v -> {
+                if (!launchApp("com.vidio.android.tv")) {
+                    launchApp("com.mitv.livetv");
+                }
+            });
         }
 
-        // Upcoming 1: Persik vs Persib (BRI Liga 1) -> Launch Vidio / Live TV
+        // Section 2: Coming Next Asia (Persib vs Melbourne Victory) -> Launch Live TV / Vision+
         if (card2 != null) {
             card2.setOnClickListener(v -> {
-                if (!launchApp("com.vidio.android.tv")) {
-                    launchApp("com.mitv.livetv");
+                if (!launchApp("com.mitv.livetv")) {
+                    launchApp("com.visionplus.android");
                 }
             });
         }
 
-        // Upcoming 2: Persib vs Semen Padang (BRI Liga 1) -> Launch Vidio / Live TV
-        if (card3 != null) {
-            card3.setOnClickListener(v -> {
-                if (!launchApp("com.vidio.android.tv")) {
-                    launchApp("com.mitv.livetv");
-                }
-            });
-        }
-
-        View[] matchCards = {card1, card2, card3};
+        View[] matchCards = {card1, card2};
         for (View card : matchCards) {
             if (card != null) {
                 card.setOnFocusChangeListener((v, hasFocus) -> {

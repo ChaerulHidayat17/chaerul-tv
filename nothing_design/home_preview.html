@@ -459,11 +459,12 @@
   }
 
   
+  
   /* ------------------------------------------------------------- */
-  /* SECTION 3: JADWAL PERSIB BANDUNG (CLEAN GOOGLE SPORTS STYLE)  */
+  /* SECTION 3: JADWAL PERSIB (2 SECTIONS: TERDEKAT & NEXT)        */
   /* ------------------------------------------------------------- */
   .persib-section {
-    margin-top: 12px;
+    margin-top: 10px;
     flex-shrink: 0;
   }
 
@@ -471,7 +472,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
   }
 
   .persib-title {
@@ -489,7 +490,7 @@
     color: #FFFFFF;
     font-size: 9px;
     font-weight: 700;
-    padding: 2px 7px;
+    padding: 2.5px 8px;
     border-radius: 4px;
     letter-spacing: 0.5px;
   }
@@ -499,138 +500,167 @@
     color: #888888;
   }
 
-  /* 3 Clean Standard Match Cards */
-  .persib-grid {
+  /* 2 CARDS GRID (Side-by-Side 50:50) */
+  .persib-grid-2 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     width: 100%;
-    height: 140px;
+    height: 124px;
   }
 
-  .match-card {
-    background: #161616;
-    border: 1px solid #282828;
-    border-radius: 14px;
-    padding: 12px 14px;
+  .match-card-wide {
+    background: #141414;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 10px 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    position: relative;
     transition: all 0.2s ease;
   }
 
-  .match-card.focused {
-    background: #202020;
+  .match-card-wide.focused {
+    background: #1C1C1F;
     border: 2px solid #FFFFFF;
-    transform: scale(1.02);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transform: scale(1.015);
+    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.12);
   }
 
-  /* Top: League & Status */
-  .card-header-clean {
+  /* Card Header: League & Status */
+  .card-top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 10px;
     color: #A0A0A0;
     font-weight: 600;
-    border-bottom: 1px solid #222222;
-    padding-bottom: 6px;
   }
 
-  .league-title {
+  .league-badge {
     color: #00A3FF;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .league-badge.acl {
+    color: #5D9CEC;
+  }
+
+  .status-pill-red {
+    background: #D71920;
+    color: #FFFFFF;
+    padding: 2px 9px;
+    border-radius: 4px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
 
-  .match-status-tag {
-    background: #242424;
+  .status-pill-blue {
+    background: #0D47A1;
     color: #FFFFFF;
-    padding: 2px 8px;
+    padding: 2px 9px;
     border-radius: 4px;
-    font-size: 9.5px;
-    font-weight: 600;
-  }
-
-  .match-status-tag.next-match {
-    background: #D71920;
-    color: #FFFFFF;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
   }
 
   /* Center: Teams & VS */
-  .teams-matchup {
+  .matchup-center-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 6px 0;
+    padding: 2px 10px;
   }
 
-  .team-box {
+  .team-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 180px;
+  }
+
+  .team-item.reverse {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .team-item img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  }
+
+  .team-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 90px;
-    text-align: center;
   }
 
-  .team-logo-img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-  }
-
-  .team-name-text {
-    font-size: 11.5px;
+  .team-main-name {
+    font-size: 13.5px;
     font-weight: 700;
     color: #FFFFFF;
-    margin-top: 4px;
-    white-space: nowrap;
+    letter-spacing: 0.4px;
   }
 
-  .vs-time-box {
+  .team-sub-tag {
+    font-size: 9.5px;
+    color: #888888;
+    margin-top: 1px;
+  }
+
+  .vs-badge-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .vs-label {
-    font-size: 11px;
-    color: #777777;
-    font-weight: 700;
-  }
-
-  .kickoff-time {
-    font-size: 16px;
+  .vs-time-text {
+    font-size: 17px;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: 0.5px;
-    margin-top: 1px;
   }
 
-  /* Bottom: Full Date & Year & Venue */
-  .card-footer-clean {
-    border-top: 1px solid #222222;
-    padding-top: 6px;
+  .vs-small-tag {
+    font-size: 9.5px;
+    color: #666666;
+    font-weight: 700;
+    margin-top: 1px;
+    letter-spacing: 1px;
+  }
+
+  /* Card Bottom Footer: Full Date + Year & Venue */
+  .card-bottom-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 5px;
+    border-top: 1px solid #202020;
     font-size: 10px;
-    color: #888888;
   }
 
-  .date-year-text {
+  .full-date-text {
+    color: #FFFFFF;
     font-weight: 600;
-    color: #D0D0D0;
+    letter-spacing: 0.3px;
   }
 
-  .venue-channel-text {
+  .venue-live-text {
     color: #888888;
     font-size: 9.5px;
   }
+
 
 
   /* ------------------------------------------------------------- */
@@ -866,116 +896,100 @@
   <!-- ------------------------------------------------------------- -->
   <!-- SECTION 3: JADWAL PERSIB BANDUNG (RESMI GOOGLE 2026/2027)     -->
   <!-- ------------------------------------------------------------- -->
+  
+  <!-- ------------------------------------------------------------- -->
+  <!-- SECTION 3: 2 SECTIONS (MATCH TERDEKAT & COMING NEXT)          -->
+  <!-- ------------------------------------------------------------- -->
   <div class="persib-section">
     <div class="persib-header">
       <div class="persib-title">
         JADWAL PERSIB BANDUNG
-        <span class="badge-live">SUPER LEAGUE 2026/2027</span>
+        <span class="badge-live">2026/2027</span>
       </div>
-      <div class="persib-sub">Sumber: Google Sports &bull; Tanggal, Jam &amp; Tahun Lengkap (2026/2027)</div>
+      <div class="persib-sub">Sumber Resmi Google Sports &bull; Tanggal, Jam &amp; Tahun Lengkap</div>
     </div>
 
-    <div class="persib-grid">
-      <!-- Card 1: MAIN HARI INI (Garudayaksa vs Persib) -->
-      <div class="match-card focused">
-        <div class="card-header-clean">
-          <span class="league-title">SUPER LEAGUE &bull; PEKAN 7</span>
-          <span class="match-status-tag next-match">MAIN HARI INI</span>
+    <div class="persib-grid-2">
+      <!-- Section 1: MATCH TERDEKAT (Main Hari Ini) -->
+      <div class="match-card-wide focused">
+        <div class="card-top-row">
+          <span class="league-badge">SUPER LEAGUE &bull; PEKAN 7</span>
+          <span class="status-pill-red">LAGA TERDEKAT &bull; HARI INI</span>
         </div>
 
-        <div class="teams-matchup">
-          <!-- Tim 1: Garudayaksa FC -->
-          <div class="team-box">
-            <img src="logo_garudayaksa.png" class="team-logo-img" alt="Garudayaksa FC">
-            <span class="team-name-text">GARUDAYAKSA</span>
+        <div class="matchup-center-row">
+          <!-- Tim Home: Garudayaksa FC -->
+          <div class="team-item">
+            <img src="logo_garudayaksa.png" alt="Garudayaksa FC">
+            <div class="team-info">
+              <span class="team-main-name">GARUDAYAKSA</span>
+              <span class="team-sub-tag">Home</span>
+            </div>
           </div>
 
-          <!-- Center: VS & Jam Kick-off -->
-          <div class="vs-time-box">
-            <span class="vs-label">VS</span>
-            <span class="kickoff-time">19:00 WIB</span>
+          <!-- Center: VS & Kick-off Time -->
+          <div class="vs-badge-box">
+            <span class="vs-time-text">19:00 WIB</span>
+            <span class="vs-small-tag">VS</span>
           </div>
 
-          <!-- Tim 2: Persib Bandung -->
-          <div class="team-box">
-            <img src="logo_persib.png" class="team-logo-img" alt="Persib Bandung">
-            <span class="team-name-text">PERSIB</span>
-          </div>
-        </div>
-
-        <div class="card-footer-clean">
-          <span class="date-year-text">Minggu, 25 Oktober 2026</span>
-          <span class="venue-channel-text">Pakansari &bull; Indosiar / Vidio</span>
-        </div>
-      </div>
-
-      <!-- Card 2: Laga Internasional ACL Two (Persib vs Melbourne Victory) -->
-      <div class="match-card">
-        <div class="card-header-clean">
-          <span class="league-title" style="color:#5D9CEC;">ACL TWO &bull; MATCHDAY 3</span>
-          <span class="match-status-tag" style="background:#0D47A1; color:#FFFFFF;">ASIA</span>
-        </div>
-
-        <div class="teams-matchup">
-          <!-- Tim 1: Persib Bandung -->
-          <div class="team-box">
-            <img src="logo_persib.png" class="team-logo-img" alt="Persib Bandung">
-            <span class="team-name-text">PERSIB</span>
-          </div>
-
-          <!-- Center: VS & Jam Kick-off -->
-          <div class="vs-time-box">
-            <span class="vs-label">VS</span>
-            <span class="kickoff-time">19:15 WIB</span>
-          </div>
-
-          <!-- Tim 2: Melbourne Victory -->
-          <div class="team-box">
-            <img src="logo_melbourne_victory.png" class="team-logo-img" alt="Melbourne Victory">
-            <span class="team-name-text">M. VICTORY</span>
+          <!-- Tim Away: Persib Bandung -->
+          <div class="team-item reverse">
+            <img src="logo_persib.png" alt="Persib Bandung">
+            <div class="team-info">
+              <span class="team-main-name">PERSIB</span>
+              <span class="team-sub-tag">Away</span>
+            </div>
           </div>
         </div>
 
-        <div class="card-footer-clean">
-          <span class="date-year-text">Rabu, 28 Oktober 2026</span>
-          <span class="venue-channel-text">Si Jalak Harupat &bull; RCTI</span>
+        <div class="card-bottom-row">
+          <span class="full-date-text">Minggu, 25 Oktober 2026</span>
+          <span class="venue-live-text">Stadion Pakansari &bull; Live Indosiar / Vidio</span>
         </div>
       </div>
 
-      <!-- Card 3: Pekan 8 Super League (Persib vs Isenmulang Kalteng) -->
-      <div class="match-card">
-        <div class="card-header-clean">
-          <span class="league-title">SUPER LEAGUE &bull; PEKAN 8</span>
-          <span class="match-status-tag">KANDANG</span>
+      <!-- Section 2: COMING OF NEXT (Laga Internasional Berikutnya) -->
+      <div class="match-card-wide">
+        <div class="card-top-row">
+          <span class="league-badge acl">ACL TWO &bull; MATCHDAY 3</span>
+          <span class="status-pill-blue">COMING NEXT &bull; ASIA</span>
         </div>
 
-        <div class="teams-matchup">
-          <!-- Tim 1: Persib Bandung -->
-          <div class="team-box">
-            <img src="logo_persib.png" class="team-logo-img" alt="Persib Bandung">
-            <span class="team-name-text">PERSIB</span>
+        <div class="matchup-center-row">
+          <!-- Tim Home: Persib Bandung -->
+          <div class="team-item">
+            <img src="logo_persib.png" alt="Persib Bandung">
+            <div class="team-info">
+              <span class="team-main-name">PERSIB</span>
+              <span class="team-sub-tag">Home</span>
+            </div>
           </div>
 
-          <!-- Center: VS & Jam Kick-off -->
-          <div class="vs-time-box">
-            <span class="vs-label">VS</span>
-            <span class="kickoff-time">19:00 WIB</span>
+          <!-- Center: VS & Kick-off Time -->
+          <div class="vs-badge-box">
+            <span class="vs-time-text">19:15 WIB</span>
+            <span class="vs-small-tag">VS</span>
           </div>
 
-          <!-- Tim 2: Isenmulang Kalteng FC -->
-          <div class="team-box">
-            <img src="logo_kalteng.png" class="team-logo-img" alt="Isenmulang Kalteng FC">
-            <span class="team-name-text">ISENMULANG</span>
+          <!-- Tim Away: Melbourne Victory -->
+          <div class="team-item reverse">
+            <img src="logo_melbourne_victory.png" alt="Melbourne Victory">
+            <div class="team-info">
+              <span class="team-main-name">M. VICTORY</span>
+              <span class="team-sub-tag">Away</span>
+            </div>
           </div>
         </div>
 
-        <div class="card-footer-clean">
-          <span class="date-year-text">Minggu, 01 November 2026</span>
-          <span class="venue-channel-text">Si Jalak Harupat &bull; Indosiar</span>
+        <div class="card-bottom-row">
+          <span class="full-date-text">Rabu, 28 Oktober 2026</span>
+          <span class="venue-live-text">Si Jalak Harupat &bull; Live RCTI / Vision+</span>
         </div>
       </div>
     </div>
   </div>
+
 
   <div class="footer">
     <div class="footer-hints">D-PAD Navigate &nbsp;&nbsp;|&nbsp;&nbsp; OK Select &nbsp;&nbsp;|&nbsp;&nbsp; BACK Return</div>
